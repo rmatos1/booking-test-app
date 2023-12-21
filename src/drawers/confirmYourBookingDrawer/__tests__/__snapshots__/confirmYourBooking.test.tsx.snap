@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConfirmYourBookingDrawer /> should render correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body
+    style="overflow: hidden;"
+  >
+    <div>
+      <div
+        class="sc-dIUfKc elmbwR"
+      />
+      <div
+        class="sc-lmoLKH jXZltv"
+        data-testid="base-drawer"
+      >
+        <button
+          class="sc-kfzCjt eoPMkj"
+          data-testid="close-button"
+        >
+          X
+        </button>
+        <form
+          class="sc-iqHXzD BDsZG"
+        >
+          <h3
+            class="sc-crrtmM drBeHN"
+          >
+            Confirm Your Booking
+          </h3>
+          <div
+            class="sc-eCstZk kLYroc"
+          >
+            <label
+              class="sc-jSguLX frDKEe"
+              data-testid="label"
+            >
+              Name
+            </label>
+            <input
+              class="sc-gKsecS hVzhxi"
+              data-testid="input-name"
+              name="name"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="sc-eCstZk kLYroc"
+          >
+            <label
+              class="sc-jSguLX frDKEe"
+              data-testid="label"
+            >
+              Email
+            </label>
+            <input
+              class="sc-gKsecS hVzhxi"
+              data-testid="input-email"
+              name="email"
+              type="email"
+              value=""
+            />
+          </div>
+          <button
+            class="sc-pGaPU cDNDED"
+            data-testid="confirm-booking"
+          >
+            Confirm Booking
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-dIUfKc elmbwR"
+    />
+    <div
+      class="sc-lmoLKH jXZltv"
+      data-testid="base-drawer"
+    >
+      <button
+        class="sc-kfzCjt eoPMkj"
+        data-testid="close-button"
+      >
+        X
+      </button>
+      <form
+        class="sc-iqHXzD BDsZG"
+      >
+        <h3
+          class="sc-crrtmM drBeHN"
+        >
+          Confirm Your Booking
+        </h3>
+        <div
+          class="sc-eCstZk kLYroc"
+        >
+          <label
+            class="sc-jSguLX frDKEe"
+            data-testid="label"
+          >
+            Name
+          </label>
+          <input
+            class="sc-gKsecS hVzhxi"
+            data-testid="input-name"
+            name="name"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-eCstZk kLYroc"
+        >
+          <label
+            class="sc-jSguLX frDKEe"
+            data-testid="label"
+          >
+            Email
+          </label>
+          <input
+            class="sc-gKsecS hVzhxi"
+            data-testid="input-email"
+            name="email"
+            type="email"
+            value=""
+          />
+        </div>
+        <button
+          class="sc-pGaPU cDNDED"
+          data-testid="confirm-booking"
+        >
+          Confirm Booking
+        </button>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
