@@ -12,7 +12,6 @@ import {
 import { ConfirmYourBookingDrawer } from '../../drawers';
 import {
   BedroomName,
-  BedroomPic,
   ContainerPic,
   Description,
   PriceGroup,
@@ -48,18 +47,22 @@ export const ResultsList = () => {
           {results.bedrooms.length ? (
             <>
               {results.bedrooms.map((item) => (
-                <ListItem key={item.number}>
+                <ListItem key={item.number} data-testid="bedroom-info">
                   <ContainerPic>
-                    <BedroomPic
-                      src={item.img}
+                    <Image
+                      height="100%"
+                      data-testid="bedroom-pic"
+                      imgSrc={item.img}
                       alt={`bedroom${item.number} pic`}
                     />
                   </ContainerPic>
 
                   <Description>
-                    <BedroomName>Bedroom {item.number}</BedroomName>
+                    <BedroomName data-testid="bedroom-name">
+                      Bedroom {item.number}
+                    </BedroomName>
 
-                    <ul>
+                    <ul data-testid="bedroom-details">
                       <li>{item.type} bedroom</li>
                       {item.beds.double &&
                         bedsListItem(item.beds.double, 'double')}
@@ -71,11 +74,12 @@ export const ResultsList = () => {
                   <PriceGroup>
                     <span>{results.numberOfNights} nights</span>
 
-                    <PriceText>
+                    <PriceText data-testid="bedroom-total-price">
                       $ {item.dailyPrice * results.numberOfNights}
                     </PriceText>
 
                     <Button
+                      data-testid="book-now"
                       $height={40}
                       $fontSize={14}
                       $backgroundColor="rgb(245, 172, 36)"
@@ -89,7 +93,7 @@ export const ResultsList = () => {
             </>
           ) : (
             <ImgContainer>
-              <Image src={svg.emptyResults} alt="no results image" />
+              <Image imgSrc={svg.emptyResults} alt="no results image" />
 
               <p>We didn't find available bedrooms with this search criteria</p>
             </ImgContainer>

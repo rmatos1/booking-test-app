@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CancelBookingModal /> should call onClose on click 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sc-bkzXAi jvfYZe"
+      >
+        <div
+          class="sc-idOjMB kWZquY"
+          data-testid="overlay"
+        />
+        <div
+          class="sc-dIUfKc fErPdZ"
+        >
+          <div
+            class="sc-hHftZz dXseJl"
+          >
+            <button
+              class="sc-dmlpXa gYemGx"
+              data-testid="close-button"
+            >
+              X
+            </button>
+          </div>
+          <svg
+            height="80px"
+            viewBox="0 0 512 512"
+            width="80px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48Zm0 319.91a20 20 0 1 1 20-20 20 20 0 0 1-20 20Zm21.72-201.15-5.74 122a16 16 0 0 1-32 0l-5.74-121.94v-.05a21.74 21.74 0 1 1 43.44 0Z"
+              fill="#f73936"
+            />
+          </svg>
+          <h4
+            data-testid="cancel-modal-title"
+          >
+            Do you want to cancel this booking from
+             
+            12/19/2023
+             to
+             
+            12/26/2023
+            ?
+          </h4>
+          <div
+            class="sc-kEjbdu dgQVNr"
+          >
+            <button
+              class="sc-jrAGKZ iDYoRl"
+              data-testid="deny-button"
+            >
+              No
+            </button>
+            <button
+              class="sc-jrAGKZ eAYdtz"
+              data-testid="cancel-booking"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-bkzXAi jvfYZe"
+    >
+      <div
+        class="sc-idOjMB kWZquY"
+        data-testid="overlay"
+      />
+      <div
+        class="sc-dIUfKc fErPdZ"
+      >
+        <div
+          class="sc-hHftZz dXseJl"
+        >
+          <button
+            class="sc-dmlpXa gYemGx"
+            data-testid="close-button"
+          >
+            X
+          </button>
+        </div>
+        <svg
+          height="80px"
+          viewBox="0 0 512 512"
+          width="80px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48Zm0 319.91a20 20 0 1 1 20-20 20 20 0 0 1-20 20Zm21.72-201.15-5.74 122a16 16 0 0 1-32 0l-5.74-121.94v-.05a21.74 21.74 0 1 1 43.44 0Z"
+            fill="#f73936"
+          />
+        </svg>
+        <h4
+          data-testid="cancel-modal-title"
+        >
+          Do you want to cancel this booking from
+           
+          12/19/2023
+           to
+           
+          12/26/2023
+          ?
+        </h4>
+        <div
+          class="sc-kEjbdu dgQVNr"
+        >
+          <button
+            class="sc-jrAGKZ iDYoRl"
+            data-testid="deny-button"
+          >
+            No
+          </button>
+          <button
+            class="sc-jrAGKZ eAYdtz"
+            data-testid="cancel-booking"
+          >
+            Yes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<CancelBookingModal /> should render correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sc-bkzXAi jvfYZe"
+      >
+        <div
+          class="sc-idOjMB kWZquY"
+          data-testid="overlay"
+        />
+        <div
+          class="sc-dIUfKc fErPdZ"
+        >
+          <div
+            class="sc-hHftZz dXseJl"
+          >
+            <button
+              class="sc-dmlpXa gYemGx"
+              data-testid="close-button"
+            >
+              X
+            </button>
+          </div>
+          <svg
+            height="80px"
+            viewBox="0 0 512 512"
+            width="80px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48Zm0 319.91a20 20 0 1 1 20-20 20 20 0 0 1-20 20Zm21.72-201.15-5.74 122a16 16 0 0 1-32 0l-5.74-121.94v-.05a21.74 21.74 0 1 1 43.44 0Z"
+              fill="#f73936"
+            />
+          </svg>
+          <h4
+            data-testid="cancel-modal-title"
+          >
+            Do you want to cancel this booking from
+             
+            12/19/2023
+             to
+             
+            12/26/2023
+            ?
+          </h4>
+          <div
+            class="sc-kEjbdu dgQVNr"
+          >
+            <button
+              class="sc-jrAGKZ iDYoRl"
+              data-testid="deny-button"
+            >
+              No
+            </button>
+            <button
+              class="sc-jrAGKZ eAYdtz"
+              data-testid="cancel-booking"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-bkzXAi jvfYZe"
+    >
+      <div
+        class="sc-idOjMB kWZquY"
+        data-testid="overlay"
+      />
+      <div
+        class="sc-dIUfKc fErPdZ"
+      >
+        <div
+          class="sc-hHftZz dXseJl"
+        >
+          <button
+            class="sc-dmlpXa gYemGx"
+            data-testid="close-button"
+          >
+            X
+          </button>
+        </div>
+        <svg
+          height="80px"
+          viewBox="0 0 512 512"
+          width="80px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48Zm0 319.91a20 20 0 1 1 20-20 20 20 0 0 1-20 20Zm21.72-201.15-5.74 122a16 16 0 0 1-32 0l-5.74-121.94v-.05a21.74 21.74 0 1 1 43.44 0Z"
+            fill="#f73936"
+          />
+        </svg>
+        <h4
+          data-testid="cancel-modal-title"
+        >
+          Do you want to cancel this booking from
+           
+          12/19/2023
+           to
+           
+          12/26/2023
+          ?
+        </h4>
+        <div
+          class="sc-kEjbdu dgQVNr"
+        >
+          <button
+            class="sc-jrAGKZ iDYoRl"
+            data-testid="deny-button"
+          >
+            No
+          </button>
+          <button
+            class="sc-jrAGKZ eAYdtz"
+            data-testid="cancel-booking"
+          >
+            Yes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

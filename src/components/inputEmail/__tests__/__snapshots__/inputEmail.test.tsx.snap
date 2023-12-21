@@ -6,16 +6,16 @@ exports[`<InputEmail /> should render correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="sc-eCstZk kLYroc"
+        class="sc-jSguLX klDGSv"
       >
         <label
-          class="sc-jSguLX frDKEe"
+          class="sc-gKsecS dRZBKP"
           data-testid="label"
         >
           Email
         </label>
         <input
-          class="sc-gKsecS hVzhxi"
+          class="sc-iBPTVF YEbKX"
           data-testid="input-email"
           name="email"
           type="email"
@@ -26,16 +26,16 @@ exports[`<InputEmail /> should render correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="sc-eCstZk kLYroc"
+      class="sc-jSguLX klDGSv"
     >
       <label
-        class="sc-jSguLX frDKEe"
+        class="sc-gKsecS dRZBKP"
         data-testid="label"
       >
         Email
       </label>
       <input
-        class="sc-gKsecS hVzhxi"
+        class="sc-iBPTVF YEbKX"
         data-testid="input-email"
         name="email"
         type="email"

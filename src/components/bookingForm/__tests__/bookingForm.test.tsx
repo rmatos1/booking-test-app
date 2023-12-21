@@ -37,6 +37,7 @@ describe('<BookingForm />', () => {
     const title = wrapper.getByText(TITLE);
 
     expect(title).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the specified date on the check-in input', () => {
@@ -48,6 +49,7 @@ describe('<BookingForm />', () => {
     fireEvent.change(inputCheckIn, { target: { value: DATE } });
 
     expect(inputCheckIn.value).toBe(DATE);
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the specified date on the check-out input', () => {
@@ -59,6 +61,7 @@ describe('<BookingForm />', () => {
     fireEvent.change(inputCheckOut, { target: { value: DATE } });
 
     expect(inputCheckOut.value).toBe(DATE);
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the specified value on the number of guests input', () => {
@@ -70,5 +73,6 @@ describe('<BookingForm />', () => {
     fireEvent.change(inputQtyGuests, { target: { value: GUESTS } });
 
     expect(parseInt(inputQtyGuests.value)).toBe(GUESTS);
+    expect(wrapper).toMatchSnapshot();
   });
 });

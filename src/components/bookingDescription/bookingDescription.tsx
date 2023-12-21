@@ -49,8 +49,8 @@ export const BookingDescription = ({
         <tr>
           <TdDescription $isLeftAligned={isLeftAligned}>Period:</TdDescription>
           <TdData data-testid="period">
-            {moment(data.checkIn).format('M/D/YYYY')} -{' '}
-            {moment(data.checkOut).format('M/D/YYYY')}
+            {moment(data.checkIn).format('MM/DD/YYYY')} -{' '}
+            {moment(data.checkOut).format('MM/DD/YYYY')}
           </TdData>
         </tr>
 

@@ -32,6 +32,7 @@ describe('<BookingDescription />', () => {
     const title = wrapper.getByText(TITLE);
 
     expect(title).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the defined name', () => {
@@ -56,10 +57,10 @@ describe('<BookingDescription />', () => {
     const period = wrapper.getByTestId('period');
 
     expect(period.textContent).toContain(
-      moment(defaultProps.data.checkIn).format('M/D/YYYY')
+      moment(defaultProps.data.checkIn).format('MM/DD/YYYY')
     );
     expect(period.textContent).toContain(
-      moment(defaultProps.data.checkOut).format('M/D/YYYY')
+      moment(defaultProps.data.checkOut).format('MM/DD/YYYY')
     );
   });
 

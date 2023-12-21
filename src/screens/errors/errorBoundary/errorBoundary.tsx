@@ -40,7 +40,7 @@ export class ErrorBoundary extends Component<
     if (this.state.hasError) {
       return (
         <CenteredContentWrapper>
-          <Image src={svg.errorApp} alt="Error app" />
+          <Image imgSrc={svg.errorApp} alt="Error app" />
 
           <TextWrapper $maxWidth={400}>
             <PageTitle>We got an error!</PageTitle>

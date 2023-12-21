@@ -10,13 +10,13 @@ import {
 } from '../../../components';
 import { ScreenPaths } from '../../../types';
 
-export const Notfound = () => {
+export const NotFound = () => {
   return (
     <>
       <NavBar />
 
       <CenteredContentWrapper>
-        <Image src={svg.pageNotFound} alt="not found" />
+        <Image imgSrc={svg.pageNotFound} alt="not found" />
 
         <TextWrapper $maxWidth={400}>
           <PageTitle>Page not found!</PageTitle>

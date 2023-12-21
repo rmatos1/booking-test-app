@@ -23,14 +23,14 @@ export const ConfirmedBooking = () => {
 
       <CenteredContentWrapper>
         <Image
-          src={bookingDescription ? svg.confirmed : svg.errorApp}
+          imgSrc={bookingDescription ? svg.confirmed : svg.errorApp}
           alt="confirmed image"
         />
 
         <TextWrapper $maxWidth={400}>
           {bookingDescription ? (
             <>
-              <PageTitle>
+              <PageTitle data-testid="title">
                 {isUpdatingBooking ? 'Updated' : 'Confirmed'} Booking!
               </PageTitle>
 

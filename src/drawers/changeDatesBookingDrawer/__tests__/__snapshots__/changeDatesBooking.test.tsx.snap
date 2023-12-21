@@ -8,37 +8,37 @@ exports[`<ChangeDatesBookingDrawer /> should render correctly 1`] = `
   >
     <div>
       <div
-        class="sc-dIUfKc elmbwR"
+        class="sc-idOjMB kWZquY"
       />
       <div
-        class="sc-lmoLKH jXZltv"
+        class="sc-cxFKTC hsKcGb"
         data-testid="base-drawer"
       >
         <button
-          class="sc-kfzCjt eoPMkj"
+          class="sc-dmlpXa gYemGx"
           data-testid="close-button"
         >
           X
         </button>
         <form
-          class="sc-iqHXzD BDsZG"
+          class="sc-crrtmM XATYL"
         >
           <h3
-            class="sc-crrtmM drBeHN"
+            class="sc-dQpIV fPWcU"
           >
             Choose the new dates
           </h3>
           <div
-            class="sc-eCstZk kLYroc"
+            class="sc-jSguLX klDGSv"
           >
             <label
-              class="sc-jSguLX frDKEe"
+              class="sc-gKsecS dRZBKP"
               data-testid="label"
             >
               Check in
             </label>
             <input
-              class="sc-gKsecS hVzhxi"
+              class="sc-iBPTVF YEbKX"
               data-testid="input-check-in"
               max="2023-12-25"
               min="2023-12-22"
@@ -48,16 +48,16 @@ exports[`<ChangeDatesBookingDrawer /> should render correctly 1`] = `
             />
           </div>
           <div
-            class="sc-eCstZk kLYroc"
+            class="sc-jSguLX klDGSv"
           >
             <label
-              class="sc-jSguLX frDKEe"
+              class="sc-gKsecS dRZBKP"
               data-testid="label"
             >
               Check out
             </label>
             <input
-              class="sc-gKsecS hVzhxi"
+              class="sc-iBPTVF YEbKX"
               data-testid="input-check-out"
               min="2023-12-20"
               name="checkOut"
@@ -66,7 +66,7 @@ exports[`<ChangeDatesBookingDrawer /> should render correctly 1`] = `
             />
           </div>
           <button
-            class="sc-pGaPU eKvsBC"
+            class="sc-jrAGKZ kaeceu"
             data-testid="update-booking"
           >
             Update Booking
@@ -77,37 +77,37 @@ exports[`<ChangeDatesBookingDrawer /> should render correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="sc-dIUfKc elmbwR"
+      class="sc-idOjMB kWZquY"
     />
     <div
-      class="sc-lmoLKH jXZltv"
+      class="sc-cxFKTC hsKcGb"
       data-testid="base-drawer"
     >
       <button
-        class="sc-kfzCjt eoPMkj"
+        class="sc-dmlpXa gYemGx"
         data-testid="close-button"
       >
         X
       </button>
       <form
-        class="sc-iqHXzD BDsZG"
+        class="sc-crrtmM XATYL"
       >
         <h3
-          class="sc-crrtmM drBeHN"
+          class="sc-dQpIV fPWcU"
         >
           Choose the new dates
         </h3>
         <div
-          class="sc-eCstZk kLYroc"
+          class="sc-jSguLX klDGSv"
         >
           <label
-            class="sc-jSguLX frDKEe"
+            class="sc-gKsecS dRZBKP"
             data-testid="label"
           >
             Check in
           </label>
           <input
-            class="sc-gKsecS hVzhxi"
+            class="sc-iBPTVF YEbKX"
             data-testid="input-check-in"
             max="2023-12-25"
             min="2023-12-22"
@@ -117,16 +117,16 @@ exports[`<ChangeDatesBookingDrawer /> should render correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCstZk kLYroc"
+          class="sc-jSguLX klDGSv"
         >
           <label
-            class="sc-jSguLX frDKEe"
+            class="sc-gKsecS dRZBKP"
             data-testid="label"
           >
             Check out
           </label>
           <input
-            class="sc-gKsecS hVzhxi"
+            class="sc-iBPTVF YEbKX"
             data-testid="input-check-out"
             min="2023-12-20"
             name="checkOut"
@@ -135,7 +135,7 @@ exports[`<ChangeDatesBookingDrawer /> should render correctly 1`] = `
           />
         </div>
         <button
-          class="sc-pGaPU eKvsBC"
+          class="sc-jrAGKZ kaeceu"
           data-testid="update-booking"
         >
           Update Booking

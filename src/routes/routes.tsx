@@ -2,7 +2,7 @@ import {
   ConfirmedBooking,
   Home,
   MyBookings,
-  Notfound,
+  NotFound,
   ResultsList,
 } from '../screens';
 import { IRoutes, ScreenPaths } from '../types';
@@ -26,6 +26,6 @@ export const routes: IRoutes[] = [
   },
   {
     path: ScreenPaths.notFound,
-    component: <Notfound />,
+    component: <NotFound />,
   },
 ];

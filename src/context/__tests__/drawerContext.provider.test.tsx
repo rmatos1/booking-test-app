@@ -18,18 +18,13 @@ const setup = (children: ReactNode): JSX.Element => {
 };
 
 describe('<DrawerProvider />', () => {
-  test('should render correctly', () => {
-    const wrapper = render(setup(testElement));
-
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  test('should render the defined children element', () => {
+  test('should render the defined children element correctly', () => {
     const wrapper = render(setup(testElement));
 
     const children = wrapper.getByTestId('test-element');
 
     expect(children).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the specified element after the click', () => {
@@ -52,5 +47,6 @@ describe('<DrawerProvider />', () => {
     const testElement = wrapper.getByTestId('test-element');
 
     expect(testElement).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 });

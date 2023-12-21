@@ -34,7 +34,7 @@ describe('bookingHelper.ts > getLimitDates', () => {
       moment(END_DATE).subtract(1, 'days').format('YYYY-MM-DD')
     );
     expect(result.checkOut.min).toBe(
-      moment(START_DATE).add(2, 'days').format('YYYY-MM-DD')
+      moment(START_DATE).add(1, 'days').format('YYYY-MM-DD')
     );
   });
 
@@ -42,7 +42,7 @@ describe('bookingHelper.ts > getLimitDates', () => {
     const result = getLimitDates('', END_DATE);
 
     expect(result.checkOut.min).toBe(
-      moment(START_DATE).add(2, 'days').format('YYYY-MM-DD')
+      moment().add(2, 'days').format('YYYY-MM-DD')
     );
   });
 

@@ -1,5 +1,6 @@
 export * from './bookingDescription';
 export * from './bookingForm';
+export * from './images';
 export * from './inputEmail';
 export * from './inputGroup';
 export * from './navBar';

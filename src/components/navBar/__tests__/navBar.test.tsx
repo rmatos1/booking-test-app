@@ -28,6 +28,7 @@ describe('<NavBar />', () => {
 
     await waitFor(() => {
       expect(myBookingsLink.classList.contains('active')).toBe(true);
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });

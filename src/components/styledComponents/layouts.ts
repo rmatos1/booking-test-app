@@ -36,3 +36,12 @@ export const TwoColumnsGrid = styled.div`
     grid-template-columns: 1fr;
   }
 `;
+
+export const ImgContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: clamp(320px, 100%, 600px);
+  margin: 0 auto;
+`;

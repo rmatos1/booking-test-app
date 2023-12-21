@@ -29,6 +29,7 @@ describe('<ConfirmYourBookingDrawer />', () => {
     fireEvent.change(inputName, { target: { value: NAME } });
 
     expect(inputName.value).toBe(NAME);
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the specified email', () => {
@@ -41,5 +42,6 @@ describe('<ConfirmYourBookingDrawer />', () => {
     fireEvent.change(inputEmail, { target: { value: EMAIL } });
 
     expect(inputEmail.value).toBe(EMAIL);
+    expect(wrapper).toMatchSnapshot();
   });
 });

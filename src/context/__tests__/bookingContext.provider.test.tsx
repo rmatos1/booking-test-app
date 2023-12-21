@@ -20,18 +20,13 @@ const setup = (children: ReactNode): JSX.Element => {
 };
 
 describe('<BookingProvider />', () => {
-  test('should render correctly', () => {
-    const wrapper = render(setup(testElement));
-
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  test('should render the defined children element', () => {
+  test('should render the defined children element correctly', () => {
     const wrapper = render(setup(testElement));
 
     const children = wrapper.getByTestId('test-element');
 
     expect(children).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the initial booking data correctly', () => {
@@ -46,6 +41,7 @@ describe('<BookingProvider />', () => {
     const bookingData = wrapper.getByTestId('booking-data');
 
     expect(bookingData.textContent).toBe(JSON.stringify(INITIAL_BOOKING_DATA));
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the specified booking data after the click', () => {
@@ -64,6 +60,7 @@ describe('<BookingProvider />', () => {
     fireEvent.click(bookingButton);
 
     expect(bookingButton.textContent).toBe(JSON.stringify(TEST_BOOKING_DATA));
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the specified id after the click', () => {
@@ -84,6 +81,7 @@ describe('<BookingProvider />', () => {
     fireEvent.click(bookingButton);
 
     expect(bookingButton.textContent).toBe(TEST_ID);
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the specified element if the booking was updated correctly', () => {
@@ -106,6 +104,7 @@ describe('<BookingProvider />', () => {
     const testElement = wrapper.getByTestId('test-element');
 
     expect(testElement).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the specified element if a booking was created or updated', () => {
@@ -128,5 +127,6 @@ describe('<BookingProvider />', () => {
     const testElement = wrapper.getByTestId('test-element');
 
     expect(testElement).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 });

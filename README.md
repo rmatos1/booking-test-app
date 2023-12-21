@@ -1,10 +1,10 @@
-# Hostfully Tech Test App
+# Booking Tech Test App
 
 This project is an application developed for the Hostfully Tech Test. It includes functionality related to booking management and utilizes technologies related to React and JavaScript.
 
 ## Project architecture
 
-![Diagram](https://drive.google.com/file/d/1TzaFGg5i5Mo57Kb6Efo-9vzz-4T3--co/view?usp=sharing)
+![Diagram](https://drive.google.com/file/d/1LZhaFGu0QlwxYwrhXRtqvEuIITeREkJa/view?usp=sharing)
 
 ## Installation
 

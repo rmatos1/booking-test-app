@@ -1,49 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<BaseDrawer /> should render correctly 1`] = `
+exports[`<Image /> should render correctly 1`] = `
 {
   "asFragment": [Function],
-  "baseElement": <body
-    style="overflow: hidden;"
-  >
+  "baseElement": <body>
     <div>
-      <div
-        class="sc-idOjMB kWZquY"
+      <img
+        alt="alt-text"
+        class="sc-bdfCDU fXjOdt"
+        data-testid="image"
+        src="./test.jpg"
       />
-      <div
-        class="sc-cxFKTC hsKcGb"
-        data-testid="base-drawer"
-      >
-        <button
-          class="sc-dmlpXa gYemGx"
-          data-testid="close-button"
-        >
-          X
-        </button>
-        <div
-          data-testid="test-element"
-        />
-      </div>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="sc-idOjMB kWZquY"
+    <img
+      alt="alt-text"
+      class="sc-bdfCDU fXjOdt"
+      data-testid="image"
+      src="./test.jpg"
     />
-    <div
-      class="sc-cxFKTC hsKcGb"
-      data-testid="base-drawer"
-    >
-      <button
-        class="sc-dmlpXa gYemGx"
-        data-testid="close-button"
-      >
-        X
-      </button>
-      <div
-        data-testid="test-element"
-      />
-    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

@@ -23,18 +23,13 @@ const setup = (children: ReactNode): JSX.Element => {
 };
 
 describe('<ConfirmedBookingsProvider />', () => {
-  test('should render correctly', () => {
-    const wrapper = render(setup(testElement));
-
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  test('should render the defined children element', () => {
+  test('should render the defined children element correctly', () => {
     const wrapper = render(setup(testElement));
 
     const children = wrapper.getByTestId('test-element');
 
     expect(children).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the specified bookings correctly after the click', () => {
@@ -60,5 +55,6 @@ describe('<ConfirmedBookingsProvider />', () => {
     expect(bookingButton.textContent).toBe(
       `[${JSON.stringify(TEST_BOOKING_DATA)}]`
     );
+    expect(wrapper).toMatchSnapshot();
   });
 });

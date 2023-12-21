@@ -46,6 +46,7 @@ describe('<InputGroup />', () => {
     fireEvent.change(input, { target: { value: 'test' } });
 
     expect(defaultProps.onChange).toHaveBeenCalled();
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the error text', () => {
@@ -59,6 +60,7 @@ describe('<InputGroup />', () => {
     const errorText = wrapper.getByTestId('error-text');
 
     expect(errorText).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should have the attributes min and max when type is number', () => {

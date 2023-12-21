@@ -49,11 +49,16 @@ export const MyBookings = () => {
           {results.length ? (
             <>
               {results.map((item) => (
-                <ListItem key={item.id} $isColumnOriented>
+                <ListItem
+                  key={item.id}
+                  $isColumnOriented
+                  data-testid="booking-info"
+                >
                   <BookingDescription data={item} isLeftAligned />
 
                   <RowButtons>
                     <Button
+                      data-testid="cancel-booking"
                       $height={40}
                       $fontSize={14}
                       $backgroundColor="#fff"
@@ -65,6 +70,7 @@ export const MyBookings = () => {
                       Cancel
                     </Button>
                     <Button
+                      data-testid="update-booking"
                       $height={40}
                       $fontSize={14}
                       $backgroundColor="rgb(245, 172, 36)"
@@ -78,7 +84,7 @@ export const MyBookings = () => {
             </>
           ) : (
             <ImgContainer>
-              <Image src={svg.emptyResults} alt="no results image" />
+              <Image imgSrc={svg.emptyResults} alt="no results image" />
 
               <p>We didn't find any bookings linked to this email</p>
             </ImgContainer>

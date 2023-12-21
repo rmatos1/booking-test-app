@@ -1,15 +1,14 @@
 import moment from 'moment';
-import { icons } from '../../assets';
 import {
   Button,
   CloseButton,
-  Icon,
   Modal,
   ModalWrapper,
   Overlay,
   RowButtons,
   TopModal,
 } from '../../components';
+import { WarningIcon } from '../../icons';
 import { IConfirmedBooking } from '../../types';
 
 export interface ICancelBookingModal {
@@ -34,12 +33,12 @@ export const CancelBookingModal = ({
           </CloseButton>
         </TopModal>
 
-        <Icon src={icons.warning} alt="warning" />
+        <WarningIcon />
 
         <h4 data-testid="cancel-modal-title">
           Do you want to cancel this booking from{' '}
-          {moment(bookingData.checkIn).format('M/D/YYYY')} to{' '}
-          {moment(bookingData.checkOut).format('M/D/YYYY')}?
+          {moment(bookingData.checkIn).format('MM/DD/YYYY')} to{' '}
+          {moment(bookingData.checkOut).format('MM/DD/YYYY')}?
         </h4>
 
         <RowButtons $width={250}>
