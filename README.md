@@ -1,18 +1,19 @@
 # Booking Tech Test App
 
 This project is an application developed for the Hostfully Tech Test. It includes functionality related to booking management and utilizes technologies related to React and JavaScript.
+`<br>`
 
 ## Project architecture
 
-![Diagram](https://drive.google.com/file/d/1LZhaFGu0QlwxYwrhXRtqvEuIITeREkJa/view?usp=sharing)
+[Diagram](https://drive.google.com/file/d/1LZhaFGu0QlwxYwrhXRtqvEuIITeREkJa/view?usp=sharing)
+`<br>`
 
 ## Installation
 
 To get started with the project, follow these steps:
 
-1. Install dependencies:
-
-npm install
+1. Install dependencies: npm install
+   `<br>`
 
 ## Available Scripts
 
@@ -23,6 +24,7 @@ In the project directory, you can run the following scripts:
 - `npm run lint`: Lints the code using ESLint with TypeScript rules.
 - `npm run preview`: Previews the built application locally.
 - `npm test`: Runs Jest for testing the application.
+  `<br>`
 
 ## Dependencies
 
@@ -31,6 +33,7 @@ In the project directory, you can run the following scripts:
 - [react-dom](https://reactjs.org/docs/react-dom.html)
 - [react-router-dom](https://reactrouter.com/web/guides/quick-start)
 - [styled-components](https://styled-components.com/)
+  `<br>`
 
 ## Dev Dependencies
 
