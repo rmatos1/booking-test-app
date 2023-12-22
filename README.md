@@ -6,6 +6,10 @@ This project is an application developed for the Hostfully Tech Test. It include
 
 [Diagram](https://drive.google.com/file/d/1LZhaFGu0QlwxYwrhXRtqvEuIITeREkJa/view?usp=sharing)
 
+## Demo version
+
+[link]("https://rmatos1.github.io/booking-test-app")
+
 ## Installation
 
 To get started with the project, follow these steps:
