@@ -8,7 +8,7 @@ This project is an application developed for the Hostfully Tech Test. It include
 
 ## Demo version
 
-[link](https://rmatos1.github.io/booking-test-app)
+[Link](https://rmatos1.github.io/booking-test-app)
 
 ## Installation
 
