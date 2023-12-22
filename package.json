@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "npx jest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "moment": "^2.29.4",
