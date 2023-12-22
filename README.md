@@ -16,9 +16,9 @@ To get started with the project, follow these steps:
 
 1. Install dependencies:
 
-|
-| npm install
-|
+```sh
+npm install
+```
 
 ## Available Scripts
 
