@@ -8,13 +8,17 @@ This project is an application developed for the Hostfully Tech Test. It include
 
 ## Demo version
 
-[Link](https://rmatos1.github.io/booking-test-app)
+[Link](https://booking-test-app-seven.vercel.app/)
 
 ## Installation
 
 To get started with the project, follow these steps:
 
-1. Install dependencies: npm install
+1. Install dependencies:
+
+<div style="background-color: black; padding: 10px;">
+  <p style="color: white;">npm install</p>
+</div>
 
 ## Available Scripts
 
