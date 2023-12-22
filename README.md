@@ -14,7 +14,7 @@ This project is an application developed for the Hostfully Tech Test. It include
 
 To get started with the project, follow these steps:
 
-Install dependencies:
+1. Install dependencies:
 
 ```sh
 npm install
