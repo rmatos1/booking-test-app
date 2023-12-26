@@ -4,10 +4,10 @@ import {
   CenteredContentWrapper,
   Image,
   PageTitle,
-  StyledLink,
   TextWrapper,
 } from '../../../components';
 import { ScreenPaths } from '../../../types';
+import styled from 'styled-components';
 
 export interface IErrorBoundaryProps {
   children: ReactNode;
@@ -16,6 +16,11 @@ export interface IErrorBoundaryProps {
 interface IErrorBoundaryState {
   hasError: boolean;
 }
+
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: #1395ec;
+`
 
 /**
  * page showed whenever there's an error on the app
@@ -46,11 +51,12 @@ export class ErrorBoundary extends Component<
             <PageTitle>We got an error!</PageTitle>
 
             <p>
-              Sorry, we got a momentary malfunctioning. Click on the link below
+              Sorry, we got a momentary malfunctioning.{"\n"}Click on the link below
               to refresh the page
             </p>
 
-            <StyledLink to={ScreenPaths.home}>New Booking</StyledLink>
+            <StyledLink href={ScreenPaths.home}>New Booking</StyledLink>
+            
           </TextWrapper>
         </CenteredContentWrapper>
       );
