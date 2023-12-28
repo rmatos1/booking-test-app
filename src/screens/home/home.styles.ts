@@ -6,7 +6,7 @@ import {
   TABLET,
 } from '../../constants';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.main`
   width: 100%;
   min-height: 100vh;
   display: flex;

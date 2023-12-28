@@ -48,7 +48,7 @@ export class ErrorBoundary extends Component<
           <Image imgSrc={svg.errorApp} alt="Error app" />
 
           <TextWrapper $maxWidth={400}>
-            <PageTitle>We got an error!</PageTitle>
+            <PageTitle data-testid="got-error-title">We got an error!</PageTitle>
 
             <p>
               Sorry, we got a momentary malfunctioning.{"\n"}Click on the link below

@@ -30,7 +30,7 @@ export const ConfirmedBooking = () => {
         <TextWrapper $maxWidth={400}>
           {bookingDescription ? (
             <>
-              <PageTitle data-testid="title">
+              <PageTitle data-testid="booking-title">
                 {isUpdatingBooking ? 'Updated' : 'Confirmed'} Booking!
               </PageTitle>
 
