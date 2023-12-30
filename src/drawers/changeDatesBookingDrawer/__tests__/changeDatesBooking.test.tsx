@@ -3,6 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import { TestComponent } from '../../../components';
 import { testBookingData } from '../../../constants';
 import { IConfirmedBookingsContext } from '../../../context';
+import moment from "moment"
 
 import { ChangeDatesBookingDrawer } from '..';
 
@@ -51,6 +52,11 @@ describe('<ChangeDatesBookingDrawer />', () => {
   test('should call setConfirmedBookings on submit', () => {
     const wrapper = render(setup());
 
+    const checkOutDate = moment(defaultProps.bookingData.checkOut).add(1, 'days').format('YYYY-MM-DD')
+
+    const inputCheckOut = wrapper.getByTestId('input-check-out') as HTMLInputElement;
+    fireEvent.change(inputCheckOut, { target: { value: checkOutDate } })
+
     const changeDatesForm = wrapper.getByTestId("change-dates-form");
 
     fireEvent.submit(changeDatesForm)
@@ -58,8 +64,21 @@ describe('<ChangeDatesBookingDrawer />', () => {
     expect(defaultConfirmedBookingsContextValue.setConfirmedBookings).toHaveBeenCalled()
   });
 
-  test('should render an error message whenever there are dates overlapping', () => {
+  test('should render an error message whenever there are dates overlapping on submit', () => {
     const wrapper = render(setup({ ...defaultConfirmedBookingsContextValue, confirmedBookings: [{ ...testBookingData, id: "2" }] }));
+
+    const changeDatesForm = wrapper.getByTestId("change-dates-form");
+
+    fireEvent.submit(changeDatesForm)
+
+    const errorMsg = wrapper.getByTestId("error-msg")
+
+    expect(errorMsg).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  test('should render an error message whenever the check-in and check-out are not changed on submit', () => {
+    const wrapper = render(setup({ ...defaultConfirmedBookingsContextValue, confirmedBookings: [testBookingData] }));
 
     const changeDatesForm = wrapper.getByTestId("change-dates-form");
 

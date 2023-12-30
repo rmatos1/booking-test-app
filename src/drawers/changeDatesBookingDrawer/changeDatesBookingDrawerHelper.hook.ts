@@ -23,7 +23,7 @@ export const useChangeDatesBookingDrawerHelper = (
   bookingData: IConfirmedBooking
 ): IUseChangeDatesBookingDrawerHelper => {
   const { confirmedBookings, checkBookingsOverlap, confirmBooking } =
-    useBooking();
+    useBooking();  
 
   const [formData, setFormData] = useState<TFormData>({
     checkIn: bookingData.checkIn,
@@ -82,30 +82,40 @@ export const useChangeDatesBookingDrawerHelper = (
       !hasDateOverlap.length ||
       (hasDateOverlap.length === 1 && hasDateOverlap[0].id === id)
     ) {
-      const totalPrice = calculateBookingTotalPrice({
-        selectedBedroom,
-        checkIn,
-        checkOut,
-      });
+      if(bookingData.checkIn === checkIn && bookingData.checkOut === checkOut) {
 
-      const bookings = confirmedBookings.map((item) => {
-        if (item.id === id) {
-          return {
-            ...item,
-            checkIn,
-            checkOut,
-            totalPrice,
-          };
-        }
+        setErrorMsg(
+          'You didn´t change the check-in and check-out dates. Please select at least one new date'
+        );
 
-        return item;
-      });
+      } else {
 
-      confirmBooking({
-        bookings,
-        id,
-        isUpdatingBooking: true,
-      });
+        const totalPrice = calculateBookingTotalPrice({
+          selectedBedroom,
+          checkIn,
+          checkOut,
+        });
+
+        const bookings = confirmedBookings.map((item) => {
+          if (item.id === id) {
+            return {
+              ...item,
+              checkIn,
+              checkOut,
+              totalPrice,
+            };
+          }
+  
+          return item;
+        });
+
+        confirmBooking({
+          bookings,
+          id,
+          isUpdatingBooking: true,
+        });
+      }
+      
     } else {
       setErrorMsg(
         'The bedroom has already been booked for the chosen period. Please choose new dates'
