@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<BaseDrawer /> should render correctly 1`] = `
+exports[`<BaseDrawer /> should render the defined children element coorectly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body

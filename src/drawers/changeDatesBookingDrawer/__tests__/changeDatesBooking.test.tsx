@@ -1,28 +1,31 @@
 import { describe, test } from '@jest/globals';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { TestComponent } from '../../../components';
-import { TEST_BOOKING_DATA } from '../../../constants';
-import { IConfirmedBooking } from '../../../types';
+import { testBookingData } from '../../../constants';
+import { IConfirmedBookingsContext } from '../../../context';
 
 import { ChangeDatesBookingDrawer } from '..';
 
+const defaultConfirmedBookingsContextValue = {
+  confirmedBookings: [],
+  setConfirmedBookings: jest.fn(),
+}
+
 const defaultProps = {
-  bookingData: TEST_BOOKING_DATA,
+  bookingData: testBookingData,
 };
 
-const setup = (componentProps?: {
-  bookingData: IConfirmedBooking;
-}): JSX.Element => {
-  const baseProps = componentProps || defaultProps;
-
+const setup = (confirmedBookingsContextValue?: IConfirmedBookingsContext): JSX.Element => {
+  
   return (
-    <TestComponent>
-      <ChangeDatesBookingDrawer {...baseProps} />
+    <TestComponent confirmedBookingsContextValue={confirmedBookingsContextValue || defaultConfirmedBookingsContextValue}>
+      <ChangeDatesBookingDrawer {...defaultProps} />
     </TestComponent>
   );
 };
 
 describe('<ChangeDatesBookingDrawer />', () => {
+  
   test('should render correctly', () => {
     const wrapper = render(setup());
 
@@ -32,9 +35,7 @@ describe('<ChangeDatesBookingDrawer />', () => {
   test('should render the defined check-in value', () => {
     const wrapper = render(setup());
 
-    const inputCheckIn = wrapper.getByTestId(
-      'input-check-in'
-    ) as HTMLInputElement;
+    const inputCheckIn = wrapper.getByTestId('input-check-in') as HTMLInputElement;
 
     expect(inputCheckIn.value).toBe(defaultProps.bookingData.checkIn);
   });
@@ -42,10 +43,31 @@ describe('<ChangeDatesBookingDrawer />', () => {
   test('should render the defined check-out value', () => {
     const wrapper = render(setup());
 
-    const inputCheckOut = wrapper.getByTestId(
-      'input-check-out'
-    ) as HTMLInputElement;
+    const inputCheckOut = wrapper.getByTestId('input-check-out') as HTMLInputElement;
 
     expect(inputCheckOut.value).toBe(defaultProps.bookingData.checkOut);
+  });
+
+  test('should call setConfirmedBookings on submit', () => {
+    const wrapper = render(setup());
+
+    const changeDatesForm = wrapper.getByTestId("change-dates-form");
+
+    fireEvent.submit(changeDatesForm)
+
+    expect(defaultConfirmedBookingsContextValue.setConfirmedBookings).toHaveBeenCalled()
+  });
+
+  test('should render an error message whenever there are dates overlapping', () => {
+    const wrapper = render(setup({ ...defaultConfirmedBookingsContextValue, confirmedBookings: [{ ...testBookingData, id: "2" }] }));
+
+    const changeDatesForm = wrapper.getByTestId("change-dates-form");
+
+    fireEvent.submit(changeDatesForm)
+
+    const errorMsg = wrapper.getByTestId("error-msg")
+
+    expect(errorMsg).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 });

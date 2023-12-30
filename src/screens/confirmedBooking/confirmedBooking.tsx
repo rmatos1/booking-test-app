@@ -40,7 +40,7 @@ export const ConfirmedBooking = () => {
               />
             </>
           ) : (
-            <p>
+            <p data-testid="empty-booking">
               Sorry, we couldn't identify your booking. However, you can make a
               new one
             </p>

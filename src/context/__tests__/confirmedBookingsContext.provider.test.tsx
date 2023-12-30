@@ -4,7 +4,7 @@ import { fireEvent, render } from '@testing-library/react';
 import { ReactNode } from 'react';
 import { ConfirmedBookingsContext, IConfirmedBookingsContext } from '..';
 import { TestComponent } from '../../components';
-import { TEST_BOOKING_DATA } from '../../constants';
+import { testBookingData } from '../../constants';
 
 const testElement: ReactNode = <div data-testid="test-element" />;
 
@@ -38,7 +38,7 @@ describe('<ConfirmedBookingsProvider />', () => {
         onClick={() =>
           value.setConfirmedBookings((prevData) => [
             ...prevData,
-            TEST_BOOKING_DATA,
+            testBookingData
           ])
         }
         data-testid="booking-button"
@@ -50,10 +50,13 @@ describe('<ConfirmedBookingsProvider />', () => {
     const wrapper = render(setup(context));
 
     const bookingButton = wrapper.getByTestId('booking-button');
+
+    expect(bookingButton.textContent).toBe(`[]`);
+
     fireEvent.click(bookingButton);
 
     expect(bookingButton.textContent).toBe(
-      `[${JSON.stringify(TEST_BOOKING_DATA)}]`
+      `[${JSON.stringify(testBookingData)}]`
     );
     expect(wrapper).toMatchSnapshot();
   });

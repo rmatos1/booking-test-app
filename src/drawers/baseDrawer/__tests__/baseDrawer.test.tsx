@@ -17,17 +17,12 @@ const setup = (): JSX.Element => {
 };
 
 describe('<BaseDrawer />', () => {
-  test('should render correctly', () => {
-    const wrapper = render(setup());
-
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  test('should render the defined children element', () => {
+  test('should render the defined children element coorectly', () => {
     const wrapper = render(setup());
 
     const children = wrapper.getByTestId('test-element');
 
     expect(children).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 });

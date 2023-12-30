@@ -5,7 +5,7 @@ import {
   createContext,
   useState,
 } from 'react';
-import { INITIAL_BOOKING_DATA } from '../constants';
+import { initialBookingData } from '../constants';
 import { IBookingData } from '../types';
 
 export interface IBookingContext {
@@ -19,8 +19,13 @@ export interface IBookingContext {
   setSuccessfulBooking: Dispatch<SetStateAction<boolean>>;
 }
 
+interface IBookingProvider {
+  children: ReactNode;
+  customValue?: IBookingContext;
+}
+
 export const BookingContext = createContext<IBookingContext>({
-  bookingData: INITIAL_BOOKING_DATA,
+  bookingData: initialBookingData,
   setBookingData: () => null,
   idSelectedBooking: '',
   setIdSelectedBooking: () => null,
@@ -30,9 +35,9 @@ export const BookingContext = createContext<IBookingContext>({
   setSuccessfulBooking: () => null,
 });
 
-export const BookingProvider = ({ children }: { children: ReactNode }) => {
+export const BookingProvider = ({ children, customValue }: IBookingProvider) => {
   const [bookingData, setBookingData] =
-    useState<IBookingData>(INITIAL_BOOKING_DATA);
+    useState<IBookingData>(initialBookingData);
   const [idSelectedBooking, setIdSelectedBooking] = useState<string>('');
   const [isUpdatingBooking, setIsUpdatingBooking] = useState<boolean>(false);
   const [successfulBooking, setSuccessfulBooking] = useState<boolean>(false);
@@ -48,6 +53,7 @@ export const BookingProvider = ({ children }: { children: ReactNode }) => {
         setIsUpdatingBooking,
         successfulBooking,
         setSuccessfulBooking,
+        ...customValue
       }}
     >
       {children}

@@ -19,7 +19,7 @@ export const ConfirmYourBookingDrawer = () => {
 
   return (
     <BaseDrawer>
-      <Form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit} data-testid="confirm-your-booking-form">
         <TitleForm>Confirm Your Booking</TitleForm>
 
         <InputGroup

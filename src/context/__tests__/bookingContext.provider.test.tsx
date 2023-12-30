@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 
 import { ReactNode } from 'react';
 import { TestComponent } from '../../components';
-import { INITIAL_BOOKING_DATA, TEST_BOOKING_DATA } from '../../constants';
+import { initialBookingData, testBookingData } from '../../constants';
 
 import { BookingContext, IBookingContext } from '..';
 
@@ -40,14 +40,14 @@ describe('<BookingProvider />', () => {
 
     const bookingData = wrapper.getByTestId('booking-data');
 
-    expect(bookingData.textContent).toBe(JSON.stringify(INITIAL_BOOKING_DATA));
+    expect(bookingData.textContent).toBe(JSON.stringify(initialBookingData));
     expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the specified booking data after the click', () => {
     const context = testConsumerContext((value) => (
       <button
-        onClick={() => value.setBookingData(TEST_BOOKING_DATA)}
+        onClick={() => value.setBookingData(testBookingData)}
         data-testid="booking-button"
       >
         {JSON.stringify(value.bookingData)}
@@ -59,7 +59,7 @@ describe('<BookingProvider />', () => {
     const bookingButton = wrapper.getByTestId('booking-button');
     fireEvent.click(bookingButton);
 
-    expect(bookingButton.textContent).toBe(JSON.stringify(TEST_BOOKING_DATA));
+    expect(bookingButton.textContent).toBe(JSON.stringify(testBookingData));
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -78,6 +78,9 @@ describe('<BookingProvider />', () => {
     const wrapper = render(setup(context));
 
     const bookingButton = wrapper.getByTestId('booking-button');
+
+    expect(bookingButton.textContent).toBe("");
+
     fireEvent.click(bookingButton);
 
     expect(bookingButton.textContent).toBe(TEST_ID);
@@ -98,12 +101,17 @@ describe('<BookingProvider />', () => {
 
     const wrapper = render(setup(context));
 
+    const testElementNotVisible = wrapper.queryByTestId('test-element');  
+
+    expect(testElementNotVisible).toBeNull();
+
     const bookingButton = wrapper.getByTestId('booking-button');
+    
     fireEvent.click(bookingButton);
 
-    const testElement = wrapper.getByTestId('test-element');
+    const testElementVisible = wrapper.getByTestId('test-element');
 
-    expect(testElement).toBeDefined();
+    expect(testElementVisible).toBeDefined();
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -121,10 +129,16 @@ describe('<BookingProvider />', () => {
 
     const wrapper = render(setup(context));
 
+    const testElementNotVisible = wrapper.queryByTestId('test-element');  
+
+    expect(testElementNotVisible).toBeNull();
+    
     const bookingButton = wrapper.getByTestId('booking-button');
     fireEvent.click(bookingButton);
 
-    const testElement = wrapper.getByTestId('test-element');
+    const testElementVisible = wrapper.getByTestId('test-element');
+
+    expect(testElementVisible).toBeDefined();
 
     expect(testElement).toBeDefined();
     expect(wrapper).toMatchSnapshot();

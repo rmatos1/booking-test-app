@@ -7,6 +7,7 @@ exports[`<CancelBookingModal /> should call onClose on click 1`] = `
     <div>
       <div
         class="sc-bkzXAi jvfYZe"
+        data-testid="cancel-booking-modal"
       >
         <div
           class="sc-idOjMB kWZquY"
@@ -70,6 +71,7 @@ exports[`<CancelBookingModal /> should call onClose on click 1`] = `
   "container": <div>
     <div
       class="sc-bkzXAi jvfYZe"
+      data-testid="cancel-booking-modal"
     >
       <div
         class="sc-idOjMB kWZquY"
@@ -190,6 +192,7 @@ exports[`<CancelBookingModal /> should render correctly 1`] = `
     <div>
       <div
         class="sc-bkzXAi jvfYZe"
+        data-testid="cancel-booking-modal"
       >
         <div
           class="sc-idOjMB kWZquY"
@@ -253,6 +256,7 @@ exports[`<CancelBookingModal /> should render correctly 1`] = `
   "container": <div>
     <div
       class="sc-bkzXAi jvfYZe"
+      data-testid="cancel-booking-modal"
     >
       <div
         class="sc-idOjMB kWZquY"

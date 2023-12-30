@@ -7,6 +7,7 @@ exports[`<BookingForm /> should render correctly 1`] = `
     <div>
       <form
         class="sc-crrtmM hShWtl"
+        data-testid="booking-form"
       >
         <div
           class="sc-jSguLX klDGSv"
@@ -21,7 +22,7 @@ exports[`<BookingForm /> should render correctly 1`] = `
             class="sc-iBPTVF YEbKX"
             data-testid="input-check-in"
             max="Invalid date"
-            min="2023-12-29"
+            min="2023-12-31"
             name="checkIn"
             type="date"
             value=""
@@ -39,7 +40,7 @@ exports[`<BookingForm /> should render correctly 1`] = `
           <input
             class="sc-iBPTVF YEbKX"
             data-testid="input-check-out"
-            min="2023-12-30"
+            min="2024-01-01"
             name="checkOut"
             type="date"
             value=""
@@ -66,6 +67,7 @@ exports[`<BookingForm /> should render correctly 1`] = `
         </div>
         <button
           class="sc-jrAGKZ cntfQH"
+          data-testid="check-availability"
         >
           Check Availability
         </button>
@@ -75,6 +77,7 @@ exports[`<BookingForm /> should render correctly 1`] = `
   "container": <div>
     <form
       class="sc-crrtmM hShWtl"
+      data-testid="booking-form"
     >
       <div
         class="sc-jSguLX klDGSv"
@@ -89,7 +92,7 @@ exports[`<BookingForm /> should render correctly 1`] = `
           class="sc-iBPTVF YEbKX"
           data-testid="input-check-in"
           max="Invalid date"
-          min="2023-12-29"
+          min="2023-12-31"
           name="checkIn"
           type="date"
           value=""
@@ -107,7 +110,7 @@ exports[`<BookingForm /> should render correctly 1`] = `
         <input
           class="sc-iBPTVF YEbKX"
           data-testid="input-check-out"
-          min="2023-12-30"
+          min="2024-01-01"
           name="checkOut"
           type="date"
           value=""
@@ -134,6 +137,7 @@ exports[`<BookingForm /> should render correctly 1`] = `
       </div>
       <button
         class="sc-jrAGKZ cntfQH"
+        data-testid="check-availability"
       >
         Check Availability
       </button>
@@ -200,12 +204,8 @@ exports[`<BookingForm /> should render the defined title 1`] = `
     <div>
       <form
         class="sc-crrtmM hShWtl"
+        data-testid="booking-form"
       >
-        <h3
-          class="sc-dQpIV fPWcU"
-        >
-          Booking
-        </h3>
         <div
           class="sc-jSguLX klDGSv"
         >
@@ -219,7 +219,7 @@ exports[`<BookingForm /> should render the defined title 1`] = `
             class="sc-iBPTVF YEbKX"
             data-testid="input-check-in"
             max="Invalid date"
-            min="2023-12-29"
+            min="2023-12-31"
             name="checkIn"
             type="date"
             value=""
@@ -237,7 +237,7 @@ exports[`<BookingForm /> should render the defined title 1`] = `
           <input
             class="sc-iBPTVF YEbKX"
             data-testid="input-check-out"
-            min="2023-12-30"
+            min="2024-01-01"
             name="checkOut"
             type="date"
             value=""
@@ -264,6 +264,81 @@ exports[`<BookingForm /> should render the defined title 1`] = `
         </div>
         <button
           class="sc-jrAGKZ cntfQH"
+          data-testid="check-availability"
+        >
+          Check Availability
+        </button>
+      </form>
+    </div>
+    <div>
+      <form
+        class="sc-crrtmM hShWtl"
+        data-testid="booking-form"
+      >
+        <h3
+          class="sc-dQpIV fPWcU"
+        >
+          Booking
+        </h3>
+        <div
+          class="sc-jSguLX klDGSv"
+        >
+          <label
+            class="sc-gKsecS dRZBKP"
+            data-testid="label"
+          >
+            Check in
+          </label>
+          <input
+            class="sc-iBPTVF YEbKX"
+            data-testid="input-check-in"
+            max="Invalid date"
+            min="2023-12-31"
+            name="checkIn"
+            type="date"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-jSguLX klDGSv"
+        >
+          <label
+            class="sc-gKsecS dRZBKP"
+            data-testid="label"
+          >
+            Check out
+          </label>
+          <input
+            class="sc-iBPTVF YEbKX"
+            data-testid="input-check-out"
+            min="2024-01-01"
+            name="checkOut"
+            type="date"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-jSguLX klDGSv"
+        >
+          <label
+            class="sc-gKsecS dRZBKP"
+            data-testid="label"
+          >
+            Number of guests
+          </label>
+          <input
+            class="sc-iBPTVF YEbKX"
+            data-testid="input-qty-guests"
+            max="4"
+            min="1"
+            name="qtyGuests"
+            type="number"
+            value=""
+          />
+        </div>
+        <button
+          class="sc-jrAGKZ cntfQH"
+          data-testid="check-availability"
         >
           Check Availability
         </button>
@@ -273,6 +348,7 @@ exports[`<BookingForm /> should render the defined title 1`] = `
   "container": <div>
     <form
       class="sc-crrtmM hShWtl"
+      data-testid="booking-form"
     >
       <h3
         class="sc-dQpIV fPWcU"
@@ -292,7 +368,7 @@ exports[`<BookingForm /> should render the defined title 1`] = `
           class="sc-iBPTVF YEbKX"
           data-testid="input-check-in"
           max="Invalid date"
-          min="2023-12-29"
+          min="2023-12-31"
           name="checkIn"
           type="date"
           value=""
@@ -310,7 +386,7 @@ exports[`<BookingForm /> should render the defined title 1`] = `
         <input
           class="sc-iBPTVF YEbKX"
           data-testid="input-check-out"
-          min="2023-12-30"
+          min="2024-01-01"
           name="checkOut"
           type="date"
           value=""
@@ -337,6 +413,7 @@ exports[`<BookingForm /> should render the defined title 1`] = `
       </div>
       <button
         class="sc-jrAGKZ cntfQH"
+        data-testid="check-availability"
       >
         Check Availability
       </button>
@@ -403,6 +480,7 @@ exports[`<BookingForm /> should render the specified date on the check-in input 
     <div>
       <form
         class="sc-crrtmM hShWtl"
+        data-testid="booking-form"
       >
         <div
           class="sc-jSguLX klDGSv"
@@ -417,7 +495,7 @@ exports[`<BookingForm /> should render the specified date on the check-in input 
             class="sc-iBPTVF YEbKX"
             data-testid="input-check-in"
             max="Invalid date"
-            min="2023-12-29"
+            min="2023-12-31"
             name="checkIn"
             type="date"
             value="2023-12-19"
@@ -462,6 +540,7 @@ exports[`<BookingForm /> should render the specified date on the check-in input 
         </div>
         <button
           class="sc-jrAGKZ cntfQH"
+          data-testid="check-availability"
         >
           Check Availability
         </button>
@@ -471,6 +550,7 @@ exports[`<BookingForm /> should render the specified date on the check-in input 
   "container": <div>
     <form
       class="sc-crrtmM hShWtl"
+      data-testid="booking-form"
     >
       <div
         class="sc-jSguLX klDGSv"
@@ -485,7 +565,7 @@ exports[`<BookingForm /> should render the specified date on the check-in input 
           class="sc-iBPTVF YEbKX"
           data-testid="input-check-in"
           max="Invalid date"
-          min="2023-12-29"
+          min="2023-12-31"
           name="checkIn"
           type="date"
           value="2023-12-19"
@@ -530,6 +610,7 @@ exports[`<BookingForm /> should render the specified date on the check-in input 
       </div>
       <button
         class="sc-jrAGKZ cntfQH"
+        data-testid="check-availability"
       >
         Check Availability
       </button>
@@ -596,6 +677,7 @@ exports[`<BookingForm /> should render the specified date on the check-out input
     <div>
       <form
         class="sc-crrtmM hShWtl"
+        data-testid="booking-form"
       >
         <div
           class="sc-jSguLX klDGSv"
@@ -610,7 +692,7 @@ exports[`<BookingForm /> should render the specified date on the check-out input
             class="sc-iBPTVF YEbKX"
             data-testid="input-check-in"
             max="2023-12-18"
-            min="2023-12-29"
+            min="2023-12-31"
             name="checkIn"
             type="date"
             value=""
@@ -628,7 +710,7 @@ exports[`<BookingForm /> should render the specified date on the check-out input
           <input
             class="sc-iBPTVF YEbKX"
             data-testid="input-check-out"
-            min="2023-12-30"
+            min="2024-01-01"
             name="checkOut"
             type="date"
             value="2023-12-19"
@@ -655,6 +737,7 @@ exports[`<BookingForm /> should render the specified date on the check-out input
         </div>
         <button
           class="sc-jrAGKZ cntfQH"
+          data-testid="check-availability"
         >
           Check Availability
         </button>
@@ -664,6 +747,7 @@ exports[`<BookingForm /> should render the specified date on the check-out input
   "container": <div>
     <form
       class="sc-crrtmM hShWtl"
+      data-testid="booking-form"
     >
       <div
         class="sc-jSguLX klDGSv"
@@ -678,7 +762,7 @@ exports[`<BookingForm /> should render the specified date on the check-out input
           class="sc-iBPTVF YEbKX"
           data-testid="input-check-in"
           max="2023-12-18"
-          min="2023-12-29"
+          min="2023-12-31"
           name="checkIn"
           type="date"
           value=""
@@ -696,7 +780,7 @@ exports[`<BookingForm /> should render the specified date on the check-out input
         <input
           class="sc-iBPTVF YEbKX"
           data-testid="input-check-out"
-          min="2023-12-30"
+          min="2024-01-01"
           name="checkOut"
           type="date"
           value="2023-12-19"
@@ -723,6 +807,7 @@ exports[`<BookingForm /> should render the specified date on the check-out input
       </div>
       <button
         class="sc-jrAGKZ cntfQH"
+        data-testid="check-availability"
       >
         Check Availability
       </button>
@@ -789,6 +874,7 @@ exports[`<BookingForm /> should render the specified value on the number of gues
     <div>
       <form
         class="sc-crrtmM hShWtl"
+        data-testid="booking-form"
       >
         <div
           class="sc-jSguLX klDGSv"
@@ -803,7 +889,7 @@ exports[`<BookingForm /> should render the specified value on the number of gues
             class="sc-iBPTVF YEbKX"
             data-testid="input-check-in"
             max="Invalid date"
-            min="2023-12-29"
+            min="2023-12-31"
             name="checkIn"
             type="date"
             value=""
@@ -821,7 +907,7 @@ exports[`<BookingForm /> should render the specified value on the number of gues
           <input
             class="sc-iBPTVF YEbKX"
             data-testid="input-check-out"
-            min="2023-12-30"
+            min="2024-01-01"
             name="checkOut"
             type="date"
             value=""
@@ -848,6 +934,7 @@ exports[`<BookingForm /> should render the specified value on the number of gues
         </div>
         <button
           class="sc-jrAGKZ cntfQH"
+          data-testid="check-availability"
         >
           Check Availability
         </button>
@@ -857,6 +944,7 @@ exports[`<BookingForm /> should render the specified value on the number of gues
   "container": <div>
     <form
       class="sc-crrtmM hShWtl"
+      data-testid="booking-form"
     >
       <div
         class="sc-jSguLX klDGSv"
@@ -871,7 +959,7 @@ exports[`<BookingForm /> should render the specified value on the number of gues
           class="sc-iBPTVF YEbKX"
           data-testid="input-check-in"
           max="Invalid date"
-          min="2023-12-29"
+          min="2023-12-31"
           name="checkIn"
           type="date"
           value=""
@@ -889,7 +977,7 @@ exports[`<BookingForm /> should render the specified value on the number of gues
         <input
           class="sc-iBPTVF YEbKX"
           data-testid="input-check-out"
-          min="2023-12-30"
+          min="2024-01-01"
           name="checkOut"
           type="date"
           value=""
@@ -916,6 +1004,7 @@ exports[`<BookingForm /> should render the specified value on the number of gues
       </div>
       <button
         class="sc-jrAGKZ cntfQH"
+        data-testid="check-availability"
       >
         Check Availability
       </button>

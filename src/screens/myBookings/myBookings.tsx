@@ -14,7 +14,7 @@ import {
 } from '../../components';
 import { ChangeDatesBookingDrawer } from '../../drawers';
 import { CancelBookingModal } from '../../modal';
-import { useMyBookingsHelper } from './myBookingHelper.hook';
+import { useMyBookingsHelper } from './myBookingsHelper.hook';
 
 export const MyBookings = () => {
   const {
@@ -42,7 +42,7 @@ export const MyBookings = () => {
 
           <InputEmail value={email} onChange={onChange} />
 
-          <Button $isDisabled={isButtonDisabled}>Check My Bookings</Button>
+          <Button $isDisabled={isButtonDisabled} data-testid="check-my-bookings">Check My Bookings</Button>
         </Form>
 
         <ListContainer $isRowOriented>
@@ -83,7 +83,7 @@ export const MyBookings = () => {
               ))}
             </>
           ) : (
-            <ImgContainer>
+            <ImgContainer data-testid="no-bookings">
               <Image imgSrc={svg.emptyResults} alt="no results image" />
 
               <p>We didn't find any bookings linked to this email</p>

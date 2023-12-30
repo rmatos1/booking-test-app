@@ -1,6 +1,7 @@
 import { describe, test } from '@jest/globals';
-import { fireEvent, render } from '@testing-library/react';
+import { RenderResult, fireEvent, render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import moment from 'moment';
 
 import { BookingForm } from '..';
 import { IBookingForm } from '../bookingFormHelper.hook';
@@ -23,16 +24,20 @@ const setup = (componentProps?: IBookingForm): JSX.Element => {
 };
 
 describe('<BookingForm />', () => {
-  test('should render correctly', () => {
-    const wrapper = render(setup());
+  let wrapper: RenderResult;
 
+  beforeEach(() => {
+    wrapper = render(setup());
+  })
+
+  test('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the defined title', () => {
     const TITLE = 'Booking';
 
-    const wrapper = render(setup({ ...defaultProps, title: TITLE }));
+    wrapper = render(setup({ ...defaultProps, title: TITLE }));
 
     const title = wrapper.getByText(TITLE);
 
@@ -41,8 +46,6 @@ describe('<BookingForm />', () => {
   });
 
   test('should render the specified date on the check-in input', () => {
-    const wrapper = render(setup());
-
     const inputCheckIn = wrapper.getByTestId(
       'input-check-in'
     ) as HTMLInputElement;
@@ -53,8 +56,6 @@ describe('<BookingForm />', () => {
   });
 
   test('should render the specified date on the check-out input', () => {
-    const wrapper = render(setup());
-
     const inputCheckOut = wrapper.getByTestId(
       'input-check-out'
     ) as HTMLInputElement;
@@ -65,8 +66,6 @@ describe('<BookingForm />', () => {
   });
 
   test('should render the specified value on the number of guests input', () => {
-    const wrapper = render(setup());
-
     const inputQtyGuests = wrapper.getByTestId(
       'input-qty-guests'
     ) as HTMLInputElement;
@@ -75,4 +74,30 @@ describe('<BookingForm />', () => {
     expect(parseInt(inputQtyGuests.value)).toBe(GUESTS);
     expect(wrapper).toMatchSnapshot();
   });
+
+  test("should call onFormSubmit on submit", () => {
+
+    const inputCheckIn = wrapper.getByTestId(
+      'input-check-in'
+    ) as HTMLInputElement;
+    fireEvent.change(inputCheckIn, { target: { value: DATE } });
+
+    const checkOutDate = moment(DATE).add(1, 'days').format('YYYY-MM-DD')
+
+    const inputCheckOut = wrapper.getByTestId(
+      'input-check-out'
+    ) as HTMLInputElement;
+    fireEvent.change(inputCheckOut, { target: { value: checkOutDate } });
+
+    const inputQtyGuests = wrapper.getByTestId(
+      'input-qty-guests'
+    ) as HTMLInputElement;
+    fireEvent.change(inputQtyGuests, { target: { value: GUESTS } });
+
+    const bookingForm = wrapper.getByTestId("booking-form");
+
+    fireEvent.submit(bookingForm);
+
+    expect(defaultProps.onFormSubmit).toHaveBeenCalled()
+  })
 });

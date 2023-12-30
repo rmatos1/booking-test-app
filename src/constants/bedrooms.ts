@@ -20,7 +20,7 @@ export const MAX_CAPACITY_BEDROOM = 4;
 /**
  * constant with the available bedrooms to be booked
  */
-export const BEDROOMS: IBedroom[] = [
+export const hotelBedrooms: IBedroom[] = [
   {
     number: 1,
     type: 'Quadruple',

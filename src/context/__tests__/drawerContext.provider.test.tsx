@@ -41,6 +41,10 @@ describe('<DrawerProvider />', () => {
 
     const wrapper = render(setup(context));
 
+    const testElementNotVisible = wrapper.queryByTestId('test-element');  
+
+    expect(testElementNotVisible).toBeNull();
+
     const bookingButton = wrapper.getByTestId('booking-button');
     fireEvent.click(bookingButton);
 

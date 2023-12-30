@@ -87,11 +87,9 @@ export const useBookingFormHelper = ({
   const handleCheckAvailabilityOnClick = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (formData.checkIn && formData.checkOut && formData.qtyGuests) {
-      setBookingData((state) => ({ ...state, ...formData }));
+    setBookingData((state) => ({ ...state, ...formData }));
 
-      onFormSubmit?.();
-    }
+    onFormSubmit?.();
   };
 
   return {

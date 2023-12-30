@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useContext, useEffect, useState } from 'react';
-import { INITIAL_BOOKING_DATA } from '../../constants';
+import { initialBookingData } from '../../constants';
 import { ConfirmedBookingsContext, DrawerContext } from '../../context';
 import { hideScroll, validateEmail } from '../../helpers';
 import { IConfirmedBooking } from '../../types';
@@ -20,7 +20,7 @@ interface IUseMyBookingsHelper {
 }
 
 const initialSelectedBookingData = {
-  ...INITIAL_BOOKING_DATA,
+  ...initialBookingData,
   id: '',
   totalPrice: 0,
 };

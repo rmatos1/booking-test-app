@@ -30,7 +30,7 @@ export const ChangeDatesBookingDrawer = ({
 
   return (
     <BaseDrawer>
-      <Form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit} data-testid="change-dates-form">
         <TitleForm>Choose the new dates</TitleForm>
 
         <InputGroup

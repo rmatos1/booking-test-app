@@ -1,5 +1,5 @@
 import { useContext, useEffect, useMemo } from 'react';
-import { BEDROOMS, IBedroom } from '../../constants';
+import { hotelBedrooms, IBedroom } from '../../constants';
 import { BookingContext, DrawerContext } from '../../context';
 import { getDifferenceDates } from '../../helpers';
 import { useBooking } from '../../hooks';
@@ -31,7 +31,7 @@ export const useResultsListHelper = (): IUseResultsListHelper => {
     /*
      * accepts only the bedrooms with capacity for the selected number of guests
      */
-    const bedroomsWithCapacity = BEDROOMS.filter(
+    const bedroomsWithCapacity = hotelBedrooms.filter(
       (item: IBedroom) => item.fullCapacity >= Number(bookingData.qtyGuests)
     );
 

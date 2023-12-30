@@ -1,0 +1,1493 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MyBookings /> should ChangeDates drawer to be visible 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body
+    style="overflow: hidden;"
+  >
+    <div>
+      <nav
+        class="sc-fubDmA jSFNkN"
+      >
+        <a
+          aria-current="page"
+          class="sc-pGaPU kpubXZ active"
+          href="/"
+        >
+          New Booking
+        </a>
+        <a
+          class="sc-pGaPU zBnL"
+          href="/my-bookings"
+        >
+          My Bookings
+        </a>
+      </nav>
+      <div
+        class="sc-kstpWv UAquR"
+      >
+        <form
+          class="sc-crrtmM XATYL"
+        >
+          <h4>
+            Enter the used email on your bookings
+          </h4>
+          <div
+            class="sc-jSguLX klDGSv"
+          >
+            <label
+              class="sc-gKsecS dRZBKP"
+              data-testid="label"
+            >
+              Email
+            </label>
+            <input
+              class="sc-iBPTVF YEbKX"
+              data-testid="input-email"
+              name="email"
+              type="email"
+              value=""
+            />
+          </div>
+          <button
+            class="sc-jrAGKZ cntfQH"
+            data-testid="check-my-bookings"
+          >
+            Check My Bookings
+          </button>
+        </form>
+        <ul
+          class="sc-fodVRF eWLEVj"
+        >
+          <div
+            class="sc-hBEZvw jsXyEX"
+            data-testid="no-bookings"
+          >
+            <img
+              alt="no results image"
+              class="sc-eCstZk cgIxof"
+              data-testid="image"
+            />
+            <p>
+              We didn't find any bookings linked to this email
+            </p>
+          </div>
+        </ul>
+      </div>
+      <div
+        class="sc-idOjMB kWZquY"
+      />
+      <div
+        class="sc-cxFKTC hsKcGb"
+        data-testid="base-drawer"
+      >
+        <button
+          class="sc-dmlpXa gYemGx"
+          data-testid="close-button"
+        >
+          X
+        </button>
+        <form
+          class="sc-crrtmM XATYL"
+          data-testid="change-dates-form"
+        >
+          <h3
+            class="sc-dQpIV fPWcU"
+          >
+            Choose the new dates
+          </h3>
+          <div
+            class="sc-jSguLX klDGSv"
+          >
+            <label
+              class="sc-gKsecS dRZBKP"
+              data-testid="label"
+            >
+              Check in
+            </label>
+            <input
+              class="sc-iBPTVF YEbKX"
+              data-testid="input-check-in"
+              max="Invalid date"
+              min="2023-12-31"
+              name="checkIn"
+              type="date"
+              value=""
+            />
+          </div>
+          <div
+            class="sc-jSguLX klDGSv"
+          >
+            <label
+              class="sc-gKsecS dRZBKP"
+              data-testid="label"
+            >
+              Check out
+            </label>
+            <input
+              class="sc-iBPTVF YEbKX"
+              data-testid="input-check-out"
+              min="2024-01-01"
+              name="checkOut"
+              type="date"
+              value=""
+            />
+          </div>
+          <button
+            class="sc-jrAGKZ cntfQH"
+            data-testid="update-booking"
+          >
+            Update Booking
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sc-fubDmA jSFNkN"
+    >
+      <a
+        aria-current="page"
+        class="sc-pGaPU kpubXZ active"
+        href="/"
+      >
+        New Booking
+      </a>
+      <a
+        class="sc-pGaPU zBnL"
+        href="/my-bookings"
+      >
+        My Bookings
+      </a>
+    </nav>
+    <div
+      class="sc-kstpWv UAquR"
+    >
+      <form
+        class="sc-crrtmM XATYL"
+      >
+        <h4>
+          Enter the used email on your bookings
+        </h4>
+        <div
+          class="sc-jSguLX klDGSv"
+        >
+          <label
+            class="sc-gKsecS dRZBKP"
+            data-testid="label"
+          >
+            Email
+          </label>
+          <input
+            class="sc-iBPTVF YEbKX"
+            data-testid="input-email"
+            name="email"
+            type="email"
+            value=""
+          />
+        </div>
+        <button
+          class="sc-jrAGKZ cntfQH"
+          data-testid="check-my-bookings"
+        >
+          Check My Bookings
+        </button>
+      </form>
+      <ul
+        class="sc-fodVRF eWLEVj"
+      >
+        <div
+          class="sc-hBEZvw jsXyEX"
+          data-testid="no-bookings"
+        >
+          <img
+            alt="no results image"
+            class="sc-eCstZk cgIxof"
+            data-testid="image"
+          />
+          <p>
+            We didn't find any bookings linked to this email
+          </p>
+        </div>
+      </ul>
+    </div>
+    <div
+      class="sc-idOjMB kWZquY"
+    />
+    <div
+      class="sc-cxFKTC hsKcGb"
+      data-testid="base-drawer"
+    >
+      <button
+        class="sc-dmlpXa gYemGx"
+        data-testid="close-button"
+      >
+        X
+      </button>
+      <form
+        class="sc-crrtmM XATYL"
+        data-testid="change-dates-form"
+      >
+        <h3
+          class="sc-dQpIV fPWcU"
+        >
+          Choose the new dates
+        </h3>
+        <div
+          class="sc-jSguLX klDGSv"
+        >
+          <label
+            class="sc-gKsecS dRZBKP"
+            data-testid="label"
+          >
+            Check in
+          </label>
+          <input
+            class="sc-iBPTVF YEbKX"
+            data-testid="input-check-in"
+            max="Invalid date"
+            min="2023-12-31"
+            name="checkIn"
+            type="date"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-jSguLX klDGSv"
+        >
+          <label
+            class="sc-gKsecS dRZBKP"
+            data-testid="label"
+          >
+            Check out
+          </label>
+          <input
+            class="sc-iBPTVF YEbKX"
+            data-testid="input-check-out"
+            min="2024-01-01"
+            name="checkOut"
+            type="date"
+            value=""
+          />
+        </div>
+        <button
+          class="sc-jrAGKZ cntfQH"
+          data-testid="update-booking"
+        >
+          Update Booking
+        </button>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<MyBookings /> should open CancelBooking modal on button click 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body
+    style="overflow: hidden;"
+  >
+    <div>
+      <nav
+        class="sc-fubDmA jSFNkN"
+      >
+        <a
+          aria-current="page"
+          class="sc-pGaPU kpubXZ active"
+          href="/"
+        >
+          New Booking
+        </a>
+        <a
+          class="sc-pGaPU zBnL"
+          href="/my-bookings"
+        >
+          My Bookings
+        </a>
+      </nav>
+      <div
+        class="sc-kstpWv UAquR"
+      >
+        <form
+          class="sc-crrtmM XATYL"
+        >
+          <h4>
+            Enter the used email on your bookings
+          </h4>
+          <div
+            class="sc-jSguLX klDGSv"
+          >
+            <label
+              class="sc-gKsecS dRZBKP"
+              data-testid="label"
+            >
+              Email
+            </label>
+            <input
+              class="sc-iBPTVF YEbKX"
+              data-testid="input-email"
+              name="email"
+              type="email"
+              value="julia@teste.com"
+            />
+          </div>
+          <button
+            class="sc-jrAGKZ kaeceu"
+            data-testid="check-my-bookings"
+          >
+            Check My Bookings
+          </button>
+        </form>
+        <ul
+          class="sc-fodVRF eWLEVj"
+        >
+          <li
+            class="sc-fFubCH iaRXIh"
+            data-testid="booking-info"
+          >
+            <table
+              class="sc-bdfCDU jqNSQk"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Name:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="name"
+                  >
+                    Julia
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Email:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="email"
+                  >
+                    julia@teste.com
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Period:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="period"
+                  >
+                    12/19/2023
+                     -
+                     
+                    12/26/2023
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Qty of Nights:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                  >
+                    7
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Bedroom nº:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="bedroom-number"
+                  >
+                    3
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Qty of Guests:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="qty-guests"
+                  >
+                    3
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Total Price:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="total-price"
+                  >
+                    $ 
+                    450
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div
+              class="sc-kEjbdu kFWIOM"
+            >
+              <button
+                class="sc-jrAGKZ bpJaWK"
+                data-testid="cancel-booking"
+              >
+                Cancel
+              </button>
+              <button
+                class="sc-jrAGKZ gPPraH"
+                data-testid="update-booking"
+              >
+                New Dates
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="sc-bkzXAi jvfYZe"
+        data-testid="cancel-booking-modal"
+      >
+        <div
+          class="sc-idOjMB kWZquY"
+          data-testid="overlay"
+        />
+        <div
+          class="sc-dIUfKc fErPdZ"
+        >
+          <div
+            class="sc-hHftZz dXseJl"
+          >
+            <button
+              class="sc-dmlpXa gYemGx"
+              data-testid="close-button"
+            >
+              X
+            </button>
+          </div>
+          <svg
+            height="80px"
+            viewBox="0 0 512 512"
+            width="80px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48Zm0 319.91a20 20 0 1 1 20-20 20 20 0 0 1-20 20Zm21.72-201.15-5.74 122a16 16 0 0 1-32 0l-5.74-121.94v-.05a21.74 21.74 0 1 1 43.44 0Z"
+              fill="#f73936"
+            />
+          </svg>
+          <h4
+            data-testid="cancel-modal-title"
+          >
+            Do you want to cancel this booking from
+             
+            12/19/2023
+             to
+             
+            12/26/2023
+            ?
+          </h4>
+          <div
+            class="sc-kEjbdu dgQVNr"
+          >
+            <button
+              class="sc-jrAGKZ iDYoRl"
+              data-testid="deny-button"
+            >
+              No
+            </button>
+            <button
+              class="sc-jrAGKZ eAYdtz"
+              data-testid="cancel-booking"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sc-fubDmA jSFNkN"
+    >
+      <a
+        aria-current="page"
+        class="sc-pGaPU kpubXZ active"
+        href="/"
+      >
+        New Booking
+      </a>
+      <a
+        class="sc-pGaPU zBnL"
+        href="/my-bookings"
+      >
+        My Bookings
+      </a>
+    </nav>
+    <div
+      class="sc-kstpWv UAquR"
+    >
+      <form
+        class="sc-crrtmM XATYL"
+      >
+        <h4>
+          Enter the used email on your bookings
+        </h4>
+        <div
+          class="sc-jSguLX klDGSv"
+        >
+          <label
+            class="sc-gKsecS dRZBKP"
+            data-testid="label"
+          >
+            Email
+          </label>
+          <input
+            class="sc-iBPTVF YEbKX"
+            data-testid="input-email"
+            name="email"
+            type="email"
+            value="julia@teste.com"
+          />
+        </div>
+        <button
+          class="sc-jrAGKZ kaeceu"
+          data-testid="check-my-bookings"
+        >
+          Check My Bookings
+        </button>
+      </form>
+      <ul
+        class="sc-fodVRF eWLEVj"
+      >
+        <li
+          class="sc-fFubCH iaRXIh"
+          data-testid="booking-info"
+        >
+          <table
+            class="sc-bdfCDU jqNSQk"
+          >
+            <tbody>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Name:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="name"
+                >
+                  Julia
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Email:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="email"
+                >
+                  julia@teste.com
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Period:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="period"
+                >
+                  12/19/2023
+                   -
+                   
+                  12/26/2023
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Qty of Nights:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                >
+                  7
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Bedroom nº:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="bedroom-number"
+                >
+                  3
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Qty of Guests:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="qty-guests"
+                >
+                  3
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Total Price:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="total-price"
+                >
+                  $ 
+                  450
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="sc-kEjbdu kFWIOM"
+          >
+            <button
+              class="sc-jrAGKZ bpJaWK"
+              data-testid="cancel-booking"
+            >
+              Cancel
+            </button>
+            <button
+              class="sc-jrAGKZ gPPraH"
+              data-testid="update-booking"
+            >
+              New Dates
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="sc-bkzXAi jvfYZe"
+      data-testid="cancel-booking-modal"
+    >
+      <div
+        class="sc-idOjMB kWZquY"
+        data-testid="overlay"
+      />
+      <div
+        class="sc-dIUfKc fErPdZ"
+      >
+        <div
+          class="sc-hHftZz dXseJl"
+        >
+          <button
+            class="sc-dmlpXa gYemGx"
+            data-testid="close-button"
+          >
+            X
+          </button>
+        </div>
+        <svg
+          height="80px"
+          viewBox="0 0 512 512"
+          width="80px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48Zm0 319.91a20 20 0 1 1 20-20 20 20 0 0 1-20 20Zm21.72-201.15-5.74 122a16 16 0 0 1-32 0l-5.74-121.94v-.05a21.74 21.74 0 1 1 43.44 0Z"
+            fill="#f73936"
+          />
+        </svg>
+        <h4
+          data-testid="cancel-modal-title"
+        >
+          Do you want to cancel this booking from
+           
+          12/19/2023
+           to
+           
+          12/26/2023
+          ?
+        </h4>
+        <div
+          class="sc-kEjbdu dgQVNr"
+        >
+          <button
+            class="sc-jrAGKZ iDYoRl"
+            data-testid="deny-button"
+          >
+            No
+          </button>
+          <button
+            class="sc-jrAGKZ eAYdtz"
+            data-testid="cancel-booking"
+          >
+            Yes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<MyBookings /> should render no bookings without enter an email 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body
+    style="overflow: unset;"
+  >
+    <div>
+      <nav
+        class="sc-fubDmA jSFNkN"
+      >
+        <a
+          aria-current="page"
+          class="sc-pGaPU kpubXZ active"
+          href="/"
+        >
+          New Booking
+        </a>
+        <a
+          class="sc-pGaPU zBnL"
+          href="/my-bookings"
+        >
+          My Bookings
+        </a>
+      </nav>
+      <div
+        class="sc-kstpWv UAquR"
+      >
+        <form
+          class="sc-crrtmM XATYL"
+        >
+          <h4>
+            Enter the used email on your bookings
+          </h4>
+          <div
+            class="sc-jSguLX klDGSv"
+          >
+            <label
+              class="sc-gKsecS dRZBKP"
+              data-testid="label"
+            >
+              Email
+            </label>
+            <input
+              class="sc-iBPTVF YEbKX"
+              data-testid="input-email"
+              name="email"
+              type="email"
+              value=""
+            />
+          </div>
+          <button
+            class="sc-jrAGKZ cntfQH"
+            data-testid="check-my-bookings"
+          >
+            Check My Bookings
+          </button>
+        </form>
+        <ul
+          class="sc-fodVRF eWLEVj"
+        >
+          <div
+            class="sc-hBEZvw jsXyEX"
+            data-testid="no-bookings"
+          >
+            <img
+              alt="no results image"
+              class="sc-eCstZk cgIxof"
+              data-testid="image"
+            />
+            <p>
+              We didn't find any bookings linked to this email
+            </p>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sc-fubDmA jSFNkN"
+    >
+      <a
+        aria-current="page"
+        class="sc-pGaPU kpubXZ active"
+        href="/"
+      >
+        New Booking
+      </a>
+      <a
+        class="sc-pGaPU zBnL"
+        href="/my-bookings"
+      >
+        My Bookings
+      </a>
+    </nav>
+    <div
+      class="sc-kstpWv UAquR"
+    >
+      <form
+        class="sc-crrtmM XATYL"
+      >
+        <h4>
+          Enter the used email on your bookings
+        </h4>
+        <div
+          class="sc-jSguLX klDGSv"
+        >
+          <label
+            class="sc-gKsecS dRZBKP"
+            data-testid="label"
+          >
+            Email
+          </label>
+          <input
+            class="sc-iBPTVF YEbKX"
+            data-testid="input-email"
+            name="email"
+            type="email"
+            value=""
+          />
+        </div>
+        <button
+          class="sc-jrAGKZ cntfQH"
+          data-testid="check-my-bookings"
+        >
+          Check My Bookings
+        </button>
+      </form>
+      <ul
+        class="sc-fodVRF eWLEVj"
+      >
+        <div
+          class="sc-hBEZvw jsXyEX"
+          data-testid="no-bookings"
+        >
+          <img
+            alt="no results image"
+            class="sc-eCstZk cgIxof"
+            data-testid="image"
+          />
+          <p>
+            We didn't find any bookings linked to this email
+          </p>
+        </div>
+      </ul>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<MyBookings /> should render the bookings that match the entered email 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body
+    style="overflow: unset;"
+  >
+    <div>
+      <nav
+        class="sc-fubDmA jSFNkN"
+      >
+        <a
+          aria-current="page"
+          class="sc-pGaPU kpubXZ active"
+          href="/"
+        >
+          New Booking
+        </a>
+        <a
+          class="sc-pGaPU zBnL"
+          href="/my-bookings"
+        >
+          My Bookings
+        </a>
+      </nav>
+      <div
+        class="sc-kstpWv UAquR"
+      >
+        <form
+          class="sc-crrtmM XATYL"
+        >
+          <h4>
+            Enter the used email on your bookings
+          </h4>
+          <div
+            class="sc-jSguLX klDGSv"
+          >
+            <label
+              class="sc-gKsecS dRZBKP"
+              data-testid="label"
+            >
+              Email
+            </label>
+            <input
+              class="sc-iBPTVF YEbKX"
+              data-testid="input-email"
+              name="email"
+              type="email"
+              value="julia@teste.com"
+            />
+          </div>
+          <button
+            class="sc-jrAGKZ kaeceu"
+            data-testid="check-my-bookings"
+          >
+            Check My Bookings
+          </button>
+        </form>
+        <ul
+          class="sc-fodVRF eWLEVj"
+        >
+          <li
+            class="sc-fFubCH iaRXIh"
+            data-testid="booking-info"
+          >
+            <table
+              class="sc-bdfCDU jqNSQk"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Name:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="name"
+                  >
+                    Julia
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Email:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="email"
+                  >
+                    julia@teste.com
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Period:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="period"
+                  >
+                    12/19/2023
+                     -
+                     
+                    12/26/2023
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Qty of Nights:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                  >
+                    7
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Bedroom nº:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="bedroom-number"
+                  >
+                    3
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Qty of Guests:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="qty-guests"
+                  >
+                    3
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="sc-dlfmHC hikmMo"
+                  >
+                    Total Price:
+                  </td>
+                  <td
+                    class="sc-hKgKIp hjxdtj"
+                    data-testid="total-price"
+                  >
+                    $ 
+                    450
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div
+              class="sc-kEjbdu kFWIOM"
+            >
+              <button
+                class="sc-jrAGKZ bpJaWK"
+                data-testid="cancel-booking"
+              >
+                Cancel
+              </button>
+              <button
+                class="sc-jrAGKZ gPPraH"
+                data-testid="update-booking"
+              >
+                New Dates
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sc-fubDmA jSFNkN"
+    >
+      <a
+        aria-current="page"
+        class="sc-pGaPU kpubXZ active"
+        href="/"
+      >
+        New Booking
+      </a>
+      <a
+        class="sc-pGaPU zBnL"
+        href="/my-bookings"
+      >
+        My Bookings
+      </a>
+    </nav>
+    <div
+      class="sc-kstpWv UAquR"
+    >
+      <form
+        class="sc-crrtmM XATYL"
+      >
+        <h4>
+          Enter the used email on your bookings
+        </h4>
+        <div
+          class="sc-jSguLX klDGSv"
+        >
+          <label
+            class="sc-gKsecS dRZBKP"
+            data-testid="label"
+          >
+            Email
+          </label>
+          <input
+            class="sc-iBPTVF YEbKX"
+            data-testid="input-email"
+            name="email"
+            type="email"
+            value="julia@teste.com"
+          />
+        </div>
+        <button
+          class="sc-jrAGKZ kaeceu"
+          data-testid="check-my-bookings"
+        >
+          Check My Bookings
+        </button>
+      </form>
+      <ul
+        class="sc-fodVRF eWLEVj"
+      >
+        <li
+          class="sc-fFubCH iaRXIh"
+          data-testid="booking-info"
+        >
+          <table
+            class="sc-bdfCDU jqNSQk"
+          >
+            <tbody>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Name:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="name"
+                >
+                  Julia
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Email:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="email"
+                >
+                  julia@teste.com
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Period:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="period"
+                >
+                  12/19/2023
+                   -
+                   
+                  12/26/2023
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Qty of Nights:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                >
+                  7
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Bedroom nº:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="bedroom-number"
+                >
+                  3
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Qty of Guests:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="qty-guests"
+                >
+                  3
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC hikmMo"
+                >
+                  Total Price:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="total-price"
+                >
+                  $ 
+                  450
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="sc-kEjbdu kFWIOM"
+          >
+            <button
+              class="sc-jrAGKZ bpJaWK"
+              data-testid="cancel-booking"
+            >
+              Cancel
+            </button>
+            <button
+              class="sc-jrAGKZ gPPraH"
+              data-testid="update-booking"
+            >
+              New Dates
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

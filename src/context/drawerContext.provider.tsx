@@ -11,12 +11,17 @@ export interface IDrawerContext {
   setIsDrawerVisible: Dispatch<SetStateAction<boolean>>;
 }
 
+interface IDrawerProvider {
+  children: ReactNode;
+  customValue?: IDrawerContext;
+}
+
 export const DrawerContext = createContext<IDrawerContext>({
   isDrawerVisible: false,
   setIsDrawerVisible: () => null,
 });
 
-export const DrawerProvider = ({ children }: { children: ReactNode }) => {
+export const DrawerProvider = ({ children, customValue }: IDrawerProvider) => {
   const [isDrawerVisible, setIsDrawerVisible] = useState<boolean>(false);
 
   return (
@@ -24,6 +29,7 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
       value={{
         isDrawerVisible,
         setIsDrawerVisible,
+        ...customValue
       }}
     >
       {children}

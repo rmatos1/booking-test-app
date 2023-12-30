@@ -23,7 +23,7 @@ export const CancelBookingModal = ({
   onCancelBooking,
 }: ICancelBookingModal) => {
   return (
-    <ModalWrapper>
+    <ModalWrapper data-testid="cancel-booking-modal">
       <Overlay onClick={onClose} data-testid="overlay" />
 
       <Modal>

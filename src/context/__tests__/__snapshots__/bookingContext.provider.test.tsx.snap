@@ -150,7 +150,7 @@ exports[`<BookingProvider /> should render the specified booking data after the 
       <button
         data-testid="booking-button"
       >
-        {"id":"","name":"Julia","email":"julia@teste.com","checkIn":"2023-12-19","checkOut":"2023-12-26","selectedBedroom":3,"qtyGuests":3,"totalPrice":450}
+        {"id":"1","name":"Julia","email":"julia@teste.com","checkIn":"2023-12-19","checkOut":"2023-12-26","selectedBedroom":3,"qtyGuests":3,"totalPrice":450}
       </button>
     </div>
   </body>,
@@ -158,7 +158,7 @@ exports[`<BookingProvider /> should render the specified booking data after the 
     <button
       data-testid="booking-button"
     >
-      {"id":"","name":"Julia","email":"julia@teste.com","checkIn":"2023-12-19","checkOut":"2023-12-26","selectedBedroom":3,"qtyGuests":3,"totalPrice":450}
+      {"id":"1","name":"Julia","email":"julia@teste.com","checkIn":"2023-12-19","checkOut":"2023-12-26","selectedBedroom":3,"qtyGuests":3,"totalPrice":450}
     </button>
   </div>,
   "debug": [Function],

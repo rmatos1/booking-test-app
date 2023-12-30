@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ConfirmedBooking /> should render correctly 1`] = `
+exports[`<ConfirmedBooking /> should render an error on not identifying the booking 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body
@@ -35,7 +35,9 @@ exports[`<ConfirmedBooking /> should render correctly 1`] = `
         <div
           class="sc-kfzCjt KTkhM"
         >
-          <p>
+          <p
+            data-testid="empty-booking"
+          >
             Sorry, we couldn't identify your booking. However, you can make a new one
           </p>
           <button
@@ -76,9 +78,749 @@ exports[`<ConfirmedBooking /> should render correctly 1`] = `
       <div
         class="sc-kfzCjt KTkhM"
       >
-        <p>
+        <p
+          data-testid="empty-booking"
+        >
           Sorry, we couldn't identify your booking. However, you can make a new one
         </p>
+        <button
+          class="sc-jrAGKZ fjUZsQ"
+        >
+          New Booking
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<ConfirmedBooking /> should render the defined booking description 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body
+    style="overflow: unset;"
+  >
+    <div>
+      <nav
+        class="sc-fubDmA jSFNkN"
+      >
+        <a
+          aria-current="page"
+          class="sc-pGaPU kpubXZ active"
+          href="/"
+        >
+          New Booking
+        </a>
+        <a
+          class="sc-pGaPU zBnL"
+          href="/my-bookings"
+        >
+          My Bookings
+        </a>
+      </nav>
+      <div
+        class="sc-bqyKbq gCCXA-D"
+      >
+        <img
+          alt="confirmed image"
+          class="sc-eCstZk cgIxof"
+          data-testid="image"
+        />
+        <div
+          class="sc-kfzCjt KTkhM"
+        >
+          <h1
+            class="sc-fKFygU dbnRdB"
+            data-testid="booking-title"
+          >
+            Confirmed
+             Booking!
+          </h1>
+          <table
+            class="sc-bdfCDU jqNSQk"
+          >
+            <thead>
+              <tr>
+                <th
+                  class="sc-gsTDqH jTARiV"
+                  colspan="2"
+                >
+                  Your booking description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Name:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="name"
+                >
+                  Julia
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Email:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="email"
+                >
+                  julia@teste.com
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Period:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="period"
+                >
+                  12/19/2023
+                   -
+                   
+                  12/26/2023
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Qty of Nights:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                >
+                  7
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Bedroom nº:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="bedroom-number"
+                >
+                  3
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Qty of Guests:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="qty-guests"
+                >
+                  3
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Total Price:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="total-price"
+                >
+                  $ 
+                  450
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button
+            class="sc-jrAGKZ fjUZsQ"
+          >
+            New Booking
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sc-fubDmA jSFNkN"
+    >
+      <a
+        aria-current="page"
+        class="sc-pGaPU kpubXZ active"
+        href="/"
+      >
+        New Booking
+      </a>
+      <a
+        class="sc-pGaPU zBnL"
+        href="/my-bookings"
+      >
+        My Bookings
+      </a>
+    </nav>
+    <div
+      class="sc-bqyKbq gCCXA-D"
+    >
+      <img
+        alt="confirmed image"
+        class="sc-eCstZk cgIxof"
+        data-testid="image"
+      />
+      <div
+        class="sc-kfzCjt KTkhM"
+      >
+        <h1
+          class="sc-fKFygU dbnRdB"
+          data-testid="booking-title"
+        >
+          Confirmed
+           Booking!
+        </h1>
+        <table
+          class="sc-bdfCDU jqNSQk"
+        >
+          <thead>
+            <tr>
+              <th
+                class="sc-gsTDqH jTARiV"
+                colspan="2"
+              >
+                Your booking description
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Name:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="name"
+              >
+                Julia
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Email:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="email"
+              >
+                julia@teste.com
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Period:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="period"
+              >
+                12/19/2023
+                 -
+                 
+                12/26/2023
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Qty of Nights:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+              >
+                7
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Bedroom nº:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="bedroom-number"
+              >
+                3
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Qty of Guests:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="qty-guests"
+              >
+                3
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Total Price:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="total-price"
+              >
+                $ 
+                450
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button
+          class="sc-jrAGKZ fjUZsQ"
+        >
+          New Booking
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<ConfirmedBooking /> should render the updated booking title 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body
+    style="overflow: unset;"
+  >
+    <div>
+      <nav
+        class="sc-fubDmA jSFNkN"
+      >
+        <a
+          aria-current="page"
+          class="sc-pGaPU kpubXZ active"
+          href="/"
+        >
+          New Booking
+        </a>
+        <a
+          class="sc-pGaPU zBnL"
+          href="/my-bookings"
+        >
+          My Bookings
+        </a>
+      </nav>
+      <div
+        class="sc-bqyKbq gCCXA-D"
+      >
+        <img
+          alt="confirmed image"
+          class="sc-eCstZk cgIxof"
+          data-testid="image"
+        />
+        <div
+          class="sc-kfzCjt KTkhM"
+        >
+          <h1
+            class="sc-fKFygU dbnRdB"
+            data-testid="booking-title"
+          >
+            Updated
+             Booking!
+          </h1>
+          <table
+            class="sc-bdfCDU jqNSQk"
+          >
+            <thead>
+              <tr>
+                <th
+                  class="sc-gsTDqH jTARiV"
+                  colspan="2"
+                >
+                  Your booking description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Name:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="name"
+                >
+                  Julia
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Email:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="email"
+                >
+                  julia@teste.com
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Period:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="period"
+                >
+                  12/19/2023
+                   -
+                   
+                  12/26/2023
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Qty of Nights:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                >
+                  7
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Bedroom nº:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="bedroom-number"
+                >
+                  3
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Qty of Guests:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="qty-guests"
+                >
+                  3
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="sc-dlfmHC iQFkgf"
+                >
+                  Total Price:
+                </td>
+                <td
+                  class="sc-hKgKIp hjxdtj"
+                  data-testid="total-price"
+                >
+                  $ 
+                  450
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button
+            class="sc-jrAGKZ fjUZsQ"
+          >
+            New Booking
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sc-fubDmA jSFNkN"
+    >
+      <a
+        aria-current="page"
+        class="sc-pGaPU kpubXZ active"
+        href="/"
+      >
+        New Booking
+      </a>
+      <a
+        class="sc-pGaPU zBnL"
+        href="/my-bookings"
+      >
+        My Bookings
+      </a>
+    </nav>
+    <div
+      class="sc-bqyKbq gCCXA-D"
+    >
+      <img
+        alt="confirmed image"
+        class="sc-eCstZk cgIxof"
+        data-testid="image"
+      />
+      <div
+        class="sc-kfzCjt KTkhM"
+      >
+        <h1
+          class="sc-fKFygU dbnRdB"
+          data-testid="booking-title"
+        >
+          Updated
+           Booking!
+        </h1>
+        <table
+          class="sc-bdfCDU jqNSQk"
+        >
+          <thead>
+            <tr>
+              <th
+                class="sc-gsTDqH jTARiV"
+                colspan="2"
+              >
+                Your booking description
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Name:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="name"
+              >
+                Julia
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Email:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="email"
+              >
+                julia@teste.com
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Period:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="period"
+              >
+                12/19/2023
+                 -
+                 
+                12/26/2023
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Qty of Nights:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+              >
+                7
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Bedroom nº:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="bedroom-number"
+              >
+                3
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Qty of Guests:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="qty-guests"
+              >
+                3
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="sc-dlfmHC iQFkgf"
+              >
+                Total Price:
+              </td>
+              <td
+                class="sc-hKgKIp hjxdtj"
+                data-testid="total-price"
+              >
+                $ 
+                450
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <button
           class="sc-jrAGKZ fjUZsQ"
         >

@@ -1,4 +1,4 @@
-export const INITIAL_BOOKING_DATA = {
+export const initialBookingData = {
   checkIn: '',
   checkOut: '',
   qtyGuests: '',
@@ -7,8 +7,8 @@ export const INITIAL_BOOKING_DATA = {
   selectedBedroom: 0,
 };
 
-export const TEST_BOOKING_DATA = {
-  id: '',
+export const testBookingData = {
+  id: '1',
   name: 'Julia',
   email: 'julia@teste.com',
   checkIn: '2023-12-19',

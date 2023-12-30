@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { BEDROOMS } from '../constants';
+import { hotelBedrooms } from '../constants';
 import { ICheckBooking } from '../types';
 
 export const getDifferenceDates = (startDate: string, endDate: string) => {
@@ -48,7 +48,7 @@ export const calculateBookingTotalPrice = ({
 }: ICheckBooking) => {
   const nights = getDifferenceDates(checkIn, checkOut);
 
-  const bedroom = BEDROOMS.find((item) => item.number === selectedBedroom);
+  const bedroom = hotelBedrooms.find((item) => item.number === selectedBedroom);
 
   return bedroom?.dailyPrice ? bedroom.dailyPrice * nights : 0;
 };

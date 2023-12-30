@@ -17,34 +17,22 @@ const setup = (componentProps?: IInputGroup): JSX.Element => {
 };
 
 describe('<InputGroup />', () => {
-  test('should render correctly', () => {
-    const wrapper = render(setup());
-
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  test('should render the specified label', () => {
+  test('should render correctly the specified label', () => {
     const wrapper = render(setup());
 
     const label = wrapper.getByTestId('label');
 
     expect(label.textContent).toContain(defaultProps.label);
+    expect(wrapper).toMatchSnapshot();
   });
 
-  test('should render the specified value', () => {
-    const wrapper = render(setup());
-
-    const input = wrapper.getByTestId('input-group') as HTMLInputElement;
-
-    expect(input.value).toBe(defaultProps.value);
-  });
-
-  test('should call onChange', () => {
+  test('should render the specified value and call onChange', () => {
     const wrapper = render(setup());
 
     const input = wrapper.getByTestId('input-group') as HTMLInputElement;
     fireEvent.change(input, { target: { value: 'test' } });
 
+    expect(input.value).toBe(defaultProps.value);
     expect(defaultProps.onChange).toHaveBeenCalled();
     expect(wrapper).toMatchSnapshot();
   });

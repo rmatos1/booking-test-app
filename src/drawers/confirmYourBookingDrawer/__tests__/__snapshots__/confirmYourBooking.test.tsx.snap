@@ -22,6 +22,7 @@ exports[`<ConfirmYourBookingDrawer /> should render correctly 1`] = `
         </button>
         <form
           class="sc-crrtmM XATYL"
+          data-testid="confirm-your-booking-form"
         >
           <h3
             class="sc-dQpIV fPWcU"
@@ -88,6 +89,7 @@ exports[`<ConfirmYourBookingDrawer /> should render correctly 1`] = `
       </button>
       <form
         class="sc-crrtmM XATYL"
+        data-testid="confirm-your-booking-form"
       >
         <h3
           class="sc-dQpIV fPWcU"
@@ -213,6 +215,7 @@ exports[`<ConfirmYourBookingDrawer /> should render the specified email 1`] = `
         </button>
         <form
           class="sc-crrtmM XATYL"
+          data-testid="confirm-your-booking-form"
         >
           <h3
             class="sc-dQpIV fPWcU"
@@ -279,6 +282,7 @@ exports[`<ConfirmYourBookingDrawer /> should render the specified email 1`] = `
       </button>
       <form
         class="sc-crrtmM XATYL"
+        data-testid="confirm-your-booking-form"
       >
         <h3
           class="sc-dQpIV fPWcU"
@@ -404,6 +408,7 @@ exports[`<ConfirmYourBookingDrawer /> should render the specified name 1`] = `
         </button>
         <form
           class="sc-crrtmM XATYL"
+          data-testid="confirm-your-booking-form"
         >
           <h3
             class="sc-dQpIV fPWcU"
@@ -470,6 +475,7 @@ exports[`<ConfirmYourBookingDrawer /> should render the specified name 1`] = `
       </button>
       <form
         class="sc-crrtmM XATYL"
+        data-testid="confirm-your-booking-form"
       >
         <h3
           class="sc-dQpIV fPWcU"

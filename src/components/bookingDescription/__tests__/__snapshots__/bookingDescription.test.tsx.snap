@@ -271,6 +271,108 @@ exports[`<BookingDescription /> should render the defined title 1`] = `
       <table
         class="sc-bdfCDU jqNSQk"
       >
+        <tbody>
+          <tr>
+            <td
+              class="sc-dlfmHC iQFkgf"
+            >
+              Name:
+            </td>
+            <td
+              class="sc-hKgKIp hjxdtj"
+              data-testid="name"
+            >
+              Julia
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="sc-dlfmHC iQFkgf"
+            >
+              Email:
+            </td>
+            <td
+              class="sc-hKgKIp hjxdtj"
+              data-testid="email"
+            >
+              julia@teste.com
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="sc-dlfmHC iQFkgf"
+            >
+              Period:
+            </td>
+            <td
+              class="sc-hKgKIp hjxdtj"
+              data-testid="period"
+            >
+              12/19/2023
+               -
+               
+              12/26/2023
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="sc-dlfmHC iQFkgf"
+            >
+              Qty of Nights:
+            </td>
+            <td
+              class="sc-hKgKIp hjxdtj"
+            >
+              7
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="sc-dlfmHC iQFkgf"
+            >
+              Bedroom nº:
+            </td>
+            <td
+              class="sc-hKgKIp hjxdtj"
+              data-testid="bedroom-number"
+            >
+              3
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="sc-dlfmHC iQFkgf"
+            >
+              Qty of Guests:
+            </td>
+            <td
+              class="sc-hKgKIp hjxdtj"
+              data-testid="qty-guests"
+            >
+              3
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="sc-dlfmHC iQFkgf"
+            >
+              Total Price:
+            </td>
+            <td
+              class="sc-hKgKIp hjxdtj"
+              data-testid="total-price"
+            >
+              $ 
+              450
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <table
+        class="sc-bdfCDU jqNSQk"
+      >
         <thead>
           <tr>
             <th

@@ -12,6 +12,11 @@ export interface IConfirmedBookingsContext {
   setConfirmedBookings: Dispatch<SetStateAction<IConfirmedBooking[]>>;
 }
 
+interface IConfirmedBookingsProvider {
+  children: ReactNode;
+  customValue?: IConfirmedBookingsContext;
+}
+
 export const ConfirmedBookingsContext =
   createContext<IConfirmedBookingsContext>({
     confirmedBookings: [],
@@ -19,10 +24,8 @@ export const ConfirmedBookingsContext =
   });
 
 export const ConfirmedBookingsProvider = ({
-  children,
-}: {
-  children: ReactNode;
-}) => {
+  children, customValue
+}: IConfirmedBookingsProvider) => {
   const [confirmedBookings, setConfirmedBookings] = useState<
     IConfirmedBooking[]
   >([]);
@@ -32,6 +35,7 @@ export const ConfirmedBookingsProvider = ({
       value={{
         confirmedBookings,
         setConfirmedBookings,
+        ...customValue 
       }}
     >
       {children}

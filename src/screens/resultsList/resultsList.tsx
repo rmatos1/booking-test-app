@@ -92,7 +92,7 @@ export const ResultsList = () => {
               ))}
             </>
           ) : (
-            <ImgContainer>
+            <ImgContainer data-testid="no-results-content">
               <Image imgSrc={svg.emptyResults} alt="no results image" />
 
               <p>We didn't find available bedrooms with this search criteria</p>

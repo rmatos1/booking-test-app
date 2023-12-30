@@ -15,7 +15,7 @@ export const BookingForm = ({ onFormSubmit, title }: IBookingForm) => {
     });
 
   return (
-    <Form $backgroundColor="#fff" $borderRadius={10} onSubmit={onSubmit}>
+    <Form $backgroundColor="#fff" $borderRadius={10} onSubmit={onSubmit} data-testid="booking-form">
       {title && <TitleForm>{title}</TitleForm>}
 
       <InputGroup
@@ -50,7 +50,7 @@ export const BookingForm = ({ onFormSubmit, title }: IBookingForm) => {
         onChange={onChange}
       />
 
-      <Button $isDisabled={isButtonDisabled}>Check Availability</Button>
+      <Button $isDisabled={isButtonDisabled} data-testid="check-availability">Check Availability</Button>
     </Form>
   );
 };

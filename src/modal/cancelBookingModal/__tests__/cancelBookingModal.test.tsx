@@ -2,13 +2,13 @@ import { describe, test } from '@jest/globals';
 import { fireEvent, render } from '@testing-library/react';
 import moment from 'moment';
 import { TestComponent } from '../../../components';
-import { TEST_BOOKING_DATA } from '../../../constants';
+import { testBookingData } from '../../../constants';
 
 import { CancelBookingModal } from '..';
 
 const defaultProps = {
   onClose: jest.fn(),
-  bookingData: TEST_BOOKING_DATA,
+  bookingData: testBookingData,
   onCancelBooking: jest.fn(),
 };
 
