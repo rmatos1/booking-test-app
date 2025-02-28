@@ -2,12 +2,12 @@ import { useState } from "react";
 import { calculateBookingTotalPrice } from "../../helpers";
 import { useBooking } from "../../hooks";
 import { IBookingData, IConfirmedBooking } from "../../types";
-import { SubmitHandler, UseFormHandleSubmit } from "react-hook-form";
+import { SubmitHandler } from "react-hook-form";
 
 type TFormData = Pick<IBookingData, "checkIn" | "checkOut">;
 
 interface IUseChangeDatesBookingDrawerHelper {
-  onSubmit: UseFormHandleSubmit<TFormData, undefined>;
+  onSubmit: SubmitHandler<TFormData>;
   errorMsg: string;
 }
 

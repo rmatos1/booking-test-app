@@ -22,7 +22,7 @@ interface IUseConfirmYourBookingDrawerHelper {
   register: UseFormRegister<TFormData>;
   isButtonDisabled: boolean;
   errors: FieldErrors<TFormData>;
-  onSubmit: (data: TFormData) => void;
+  onSubmit: (e?: React.BaseSyntheticEvent) => Promise<void>;
 }
 
 export const useConfirmYourBookingDrawerHelper = (
