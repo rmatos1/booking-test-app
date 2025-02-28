@@ -1,16 +1,5 @@
-import { images } from '../assets';
-
-export interface IBedroom {
-  number: number;
-  type: string;
-  beds: {
-    double?: number;
-    single?: number;
-  };
-  img: string;
-  fullCapacity: number;
-  dailyPrice: number;
-}
+import { images } from "../assets";
+import { IBedroom } from "../types";
 
 /**
  * constant that stores the maximum number of people possible in the biggest bedroom
@@ -23,7 +12,7 @@ export const MAX_CAPACITY_BEDROOM = 4;
 export const hotelBedrooms: IBedroom[] = [
   {
     number: 1,
-    type: 'Quadruple',
+    type: "Quadruple",
     beds: {
       double: 1,
       single: 2,
@@ -34,7 +23,7 @@ export const hotelBedrooms: IBedroom[] = [
   },
   {
     number: 2,
-    type: 'Single',
+    type: "Single",
     beds: {
       double: 1,
     },
@@ -44,7 +33,7 @@ export const hotelBedrooms: IBedroom[] = [
   },
   {
     number: 3,
-    type: 'Triple',
+    type: "Triple",
     beds: {
       double: 1,
       single: 1,
@@ -55,17 +44,17 @@ export const hotelBedrooms: IBedroom[] = [
   },
   {
     number: 4,
-    type: 'Triple',
+    type: "Triple",
     beds: {
       single: 3,
     },
     img: images.bedroom4,
     fullCapacity: 3,
-    dailyPrice: 50,
+    dailyPrice: 45,
   },
   {
     number: 5,
-    type: 'Single',
+    type: "Single",
     beds: {
       single: 2,
     },

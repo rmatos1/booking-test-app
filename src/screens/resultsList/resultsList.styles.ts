@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+
+export const NumberNightsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & span {
+    font-size: 18px;
+  }
+`;
 
 export const ContainerPic = styled.div`
   width: 150px;

@@ -1,25 +1,24 @@
-import { svg } from '../../assets';
+import { svg } from "../../assets";
 import {
   BookingDescription,
   Button,
   Form,
   Image,
   ImgContainer,
-  InputEmail,
+  InputGroup,
   ListContainer,
   ListItem,
   NavBar,
   RowButtons,
   TwoColumnsGrid,
-} from '../../components';
-import { ChangeDatesBookingDrawer } from '../../drawers';
-import { CancelBookingModal } from '../../modal';
-import { useMyBookingsHelper } from './myBookingsHelper.hook';
+} from "../../components";
+import { ChangeDatesBookingDrawer } from "../../drawers";
+import { CancelBookingModal } from "../../modal";
+import { useMyBookingsHelper } from "./myBookingsHelper.hook";
 
 export const MyBookings = () => {
   const {
-    email,
-    onChange,
+    lastCheckedEmail,
     isButtonDisabled,
     results,
     onSubmit,
@@ -30,6 +29,9 @@ export const MyBookings = () => {
     onOpenModal,
     onCancelBooking,
     isDrawerVisible,
+    onCloseDrawer,
+    register,
+    errors,
   } = useMyBookingsHelper();
 
   return (
@@ -40,13 +42,24 @@ export const MyBookings = () => {
         <Form onSubmit={onSubmit}>
           <h4>Enter the used email on your bookings</h4>
 
-          <InputEmail value={email} onChange={onChange} />
+          <InputGroup
+            dataTestId="input-email"
+            label="Email"
+            type="email"
+            {...register("email", { required: true })}
+            validationErrorMsg={errors.email?.message}
+          />
 
-          <Button $isDisabled={isButtonDisabled} data-testid="check-my-bookings">Check My Bookings</Button>
+          <Button
+            $isDisabled={isButtonDisabled}
+            data-testid="check-my-bookings"
+          >
+            Check My Bookings
+          </Button>
         </Form>
 
         <ListContainer $isRowOriented>
-          {results.length ? (
+          {results?.length ? (
             <>
               {results.map((item) => (
                 <ListItem
@@ -86,7 +99,11 @@ export const MyBookings = () => {
             <ImgContainer data-testid="no-bookings">
               <Image imgSrc={svg.emptyResults} alt="no results image" />
 
-              <p>We didn't find any bookings linked to this email</p>
+              <p>
+                {results
+                  ? `We didn't find any bookings linked to ${lastCheckedEmail}`
+                  : "Enter your email to see your bookings"}
+              </p>
             </ImgContainer>
           )}
         </ListContainer>
@@ -100,9 +117,11 @@ export const MyBookings = () => {
         />
       )}
 
-      {isDrawerVisible && (
-        <ChangeDatesBookingDrawer bookingData={selectedBooking} />
-      )}
+      <ChangeDatesBookingDrawer
+        isDrawerVisible={isDrawerVisible}
+        onCloseDrawer={onCloseDrawer}
+        bookingData={selectedBooking}
+      />
     </>
   );
 };

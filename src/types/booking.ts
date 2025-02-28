@@ -1,13 +1,30 @@
-import { ChangeEvent, FormEvent } from 'react';
+import { ChangeEvent, FormEvent } from "react";
+
+export interface IBedroom {
+  number: number;
+  type: string;
+  beds: {
+    double?: number;
+    single?: number;
+  };
+  img: string;
+  fullCapacity: number;
+  dailyPrice: number;
+}
 
 export interface IBookingData {
   checkIn: string;
   checkOut: string;
-  qtyGuests: string | number;
+  guests: string | number;
   name: string;
   email: string;
   selectedBedroom: number;
 }
+
+export type BookingFormDataProps = Pick<
+  IBookingData,
+  "checkIn" | "checkOut" | "guests"
+>;
 
 export interface IConfirmedBooking extends IBookingData {
   id: string;

@@ -1,102 +1,147 @@
+import { useEffect, useState, useMemo, useCallback } from "react";
+import { useLocation, useSearchParams } from "react-router-dom";
 import {
-  ChangeEvent,
-  FormEvent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
-import { useLocation } from 'react-router-dom';
-import { BookingContext } from '../../context';
-import { getLimitDates } from '../../helpers';
-import {
-  IBookingData,
-  ILimitDates,
-  IUseBookingFormHelper,
-  ScreenPaths,
-} from '../../types';
+  FieldErrors,
+  useForm,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+import moment from "moment";
+import { getLimitDates, getAvailabilityParams } from "../../helpers";
+import { BookingFormDataProps, ILimitDates, ScreenPaths } from "../../types";
 
-export interface IBookingForm {
-  onFormSubmit?: () => void;
-  title?: string;
-}
-
-interface IUseBookingFormHelperInput {
-  onFormSubmit?: () => void;
-}
-
-type TFormData = Pick<IBookingData, 'checkIn' | 'checkOut' | 'qtyGuests'>;
-
-interface IUserBookingFormHelperOutput extends IUseBookingFormHelper {
-  formData: TFormData;
+interface IUserBookingFormHelperOutput {
+  isButtonDisabled: boolean;
   limitDates: {
     checkIn: ILimitDates;
     checkOut: ILimitDates;
   };
+  register: UseFormRegister<BookingFormDataProps>;
+  handleSubmit: UseFormHandleSubmit<BookingFormDataProps, undefined>;
+  errors: FieldErrors<BookingFormDataProps>;
 }
 
-export const useBookingFormHelper = ({
-  onFormSubmit,
-}: IUseBookingFormHelperInput): IUserBookingFormHelperOutput => {
+export const useBookingFormHelper = (): IUserBookingFormHelperOutput => {
   const location = useLocation();
-  const { bookingData, setBookingData } = useContext(BookingContext);
+  const [params] = useSearchParams();
 
-  const [formData, setFormData] = useState<TFormData>({
-    checkIn: '',
-    checkOut: '',
-    qtyGuests: '',
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    trigger,
+    setError,
+    clearErrors,
+    formState: { isValid, errors },
+  } = useForm<BookingFormDataProps>({
+    defaultValues: {
+      checkIn: "",
+      checkOut: "",
+      guests: "",
+    },
   });
-  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
 
-  const limitDates = useMemo(
-    () => getLimitDates(formData.checkIn, formData.checkOut),
-    [formData]
-  );
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+  const watchCheckIn = watch("checkIn");
+  const watchCheckOut = watch("checkOut");
+
+  const limitDates = useMemo(() => {
+    return getLimitDates(watchCheckIn, watchCheckOut);
+  }, [watchCheckIn, watchCheckOut]);
+
+  const fillBookingForm = useCallback(async () => {
+    const { checkIn, checkOut, guests } = getAvailabilityParams(params);
+
+    if (checkIn) {
+      setValue("checkIn", checkIn);
+    }
+
+    if (checkOut) {
+      setValue("checkOut", checkOut);
+    }
+    if (guests) {
+      setValue("guests", guests);
+    }
+
+    await trigger();
+  }, [params, setValue, trigger]);
 
   useEffect(() => {
     /*
-     * set the initial value of the inputs for a page different from home
+     * set the initial input values for the results list page
      */
-    if (location.pathname !== ScreenPaths.home) {
-      const { checkIn, checkOut, qtyGuests } = bookingData;
-
-      setFormData({
-        checkIn,
-        checkOut,
-        qtyGuests,
-      });
+    if (location.pathname === ScreenPaths.resultsList) {
+      fillBookingForm();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname]);
+  }, [location.pathname, fillBookingForm]);
+
+  const isValidDate = useCallback(
+    (dateString: string) => {
+      if (!dateString) {
+        return false;
+      }
+
+      if (moment(dateString).isBefore(limitDates.checkIn.min)) {
+        return false;
+      }
+
+      if (moment(dateString).isAfter(limitDates.checkOut.max)) {
+        return false;
+      }
+
+      return true;
+    },
+    [limitDates]
+  );
 
   useEffect(() => {
-    const isValid = formData.checkIn && formData.checkOut && formData.qtyGuests;
+    const isValidCheckIn =
+      isValidDate(watchCheckIn) &&
+      (watchCheckOut
+        ? moment(watchCheckIn).isBefore(moment(watchCheckOut))
+        : true);
 
-    setIsButtonDisabled(!isValid);
-  }, [formData]);
+    if (!isValidCheckIn) {
+      setError("checkIn", {
+        message: "Invalid check-in date",
+      });
+    } else {
+      clearErrors("checkIn");
+    }
 
-  const handleInputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const isValidCheckOut =
+      isValidDate(watchCheckOut) &&
+      (watchCheckIn
+        ? moment(watchCheckOut).isAfter(moment(watchCheckIn))
+        : true);
 
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+    if (!isValidCheckOut) {
+      setError("checkOut", {
+        message: "Invalid check-out date",
+      });
+    } else {
+      clearErrors("checkOut");
+    }
 
-  const handleCheckAvailabilityOnClick = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    const isValidForm = isValid && isValidCheckIn && isValidCheckOut;
 
-    setBookingData((state) => ({ ...state, ...formData }));
-
-    onFormSubmit?.();
-  };
+    setIsButtonDisabled(!isValidForm);
+  }, [
+    isValid,
+    watchCheckIn,
+    watchCheckOut,
+    setError,
+    isValidDate,
+    clearErrors,
+  ]);
 
   return {
-    formData,
-    onChange: handleInputOnChange,
-    onSubmit: handleCheckAvailabilityOnClick,
     isButtonDisabled,
     limitDates,
+    register,
+    handleSubmit,
+    errors,
   };
 };

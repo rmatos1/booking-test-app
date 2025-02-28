@@ -47,7 +47,6 @@ exports[`<BookingDescription /> should render correctly 1`] = `
             >
               12/19/2023
                -
-               
               12/26/2023
             </td>
           </tr>
@@ -55,7 +54,7 @@ exports[`<BookingDescription /> should render correctly 1`] = `
             <td
               class="sc-dlfmHC iQFkgf"
             >
-              Qty of Nights:
+              Nights:
             </td>
             <td
               class="sc-hKgKIp hjxdtj"
@@ -80,7 +79,7 @@ exports[`<BookingDescription /> should render correctly 1`] = `
             <td
               class="sc-dlfmHC iQFkgf"
             >
-              Qty of Guests:
+              Guests:
             </td>
             <td
               class="sc-hKgKIp hjxdtj"
@@ -150,7 +149,6 @@ exports[`<BookingDescription /> should render correctly 1`] = `
           >
             12/19/2023
              -
-             
             12/26/2023
           </td>
         </tr>
@@ -158,7 +156,7 @@ exports[`<BookingDescription /> should render correctly 1`] = `
           <td
             class="sc-dlfmHC iQFkgf"
           >
-            Qty of Nights:
+            Nights:
           </td>
           <td
             class="sc-hKgKIp hjxdtj"
@@ -183,7 +181,7 @@ exports[`<BookingDescription /> should render correctly 1`] = `
           <td
             class="sc-dlfmHC iQFkgf"
           >
-            Qty of Guests:
+            Guests:
           </td>
           <td
             class="sc-hKgKIp hjxdtj"
@@ -310,7 +308,6 @@ exports[`<BookingDescription /> should render the defined title 1`] = `
             >
               12/19/2023
                -
-               
               12/26/2023
             </td>
           </tr>
@@ -318,7 +315,7 @@ exports[`<BookingDescription /> should render the defined title 1`] = `
             <td
               class="sc-dlfmHC iQFkgf"
             >
-              Qty of Nights:
+              Nights:
             </td>
             <td
               class="sc-hKgKIp hjxdtj"
@@ -343,7 +340,7 @@ exports[`<BookingDescription /> should render the defined title 1`] = `
             <td
               class="sc-dlfmHC iQFkgf"
             >
-              Qty of Guests:
+              Guests:
             </td>
             <td
               class="sc-hKgKIp hjxdtj"
@@ -422,7 +419,6 @@ exports[`<BookingDescription /> should render the defined title 1`] = `
             >
               12/19/2023
                -
-               
               12/26/2023
             </td>
           </tr>
@@ -430,7 +426,7 @@ exports[`<BookingDescription /> should render the defined title 1`] = `
             <td
               class="sc-dlfmHC iQFkgf"
             >
-              Qty of Nights:
+              Nights:
             </td>
             <td
               class="sc-hKgKIp hjxdtj"
@@ -455,7 +451,7 @@ exports[`<BookingDescription /> should render the defined title 1`] = `
             <td
               class="sc-dlfmHC iQFkgf"
             >
-              Qty of Guests:
+              Guests:
             </td>
             <td
               class="sc-hKgKIp hjxdtj"
@@ -535,7 +531,6 @@ exports[`<BookingDescription /> should render the defined title 1`] = `
           >
             12/19/2023
              -
-             
             12/26/2023
           </td>
         </tr>
@@ -543,7 +538,7 @@ exports[`<BookingDescription /> should render the defined title 1`] = `
           <td
             class="sc-dlfmHC iQFkgf"
           >
-            Qty of Nights:
+            Nights:
           </td>
           <td
             class="sc-hKgKIp hjxdtj"
@@ -568,7 +563,7 @@ exports[`<BookingDescription /> should render the defined title 1`] = `
           <td
             class="sc-dlfmHC iQFkgf"
           >
-            Qty of Guests:
+            Guests:
           </td>
           <td
             class="sc-hKgKIp hjxdtj"

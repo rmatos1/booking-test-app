@@ -1,50 +1,32 @@
-import { useContext, useEffect, useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { BookingContext, ConfirmedBookingsContext } from '../../context';
-import { IConfirmedBooking, ScreenPaths } from '../../types';
+import { useContext, useMemo } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { ConfirmedBookingsContext } from "../../context";
+import { IConfirmedBooking, ScreenPaths } from "../../types";
 
 interface IUseConfirmedBookingHelper {
   onNewBookingClick: () => void;
-  bookingDescription: IConfirmedBooking | null;
+  bookingDescription: IConfirmedBooking | undefined;
   isUpdatingBooking: boolean;
 }
 
 export const useConfirmedBookingHelper = (): IUseConfirmedBookingHelper => {
   const navigate = useNavigate();
-  const {
-    idSelectedBooking,
-    isUpdatingBooking,
-    successfulBooking,
-    setSuccessfulBooking,
-  } = useContext(BookingContext);
+  const [params] = useSearchParams();
+
   const { confirmedBookings } = useContext(ConfirmedBookingsContext);
 
-  const [showBooking, setShowBooking] = useState<boolean>(false);
+  const isUpdatingBooking = !!params.get("isUpdatingBooking");
 
   /**
    * gets all the data related to the booking in the context
    */
   const bookingDescription = useMemo(() => {
-    const booking = confirmedBookings.find(
-      (item) => item.id === idSelectedBooking
-    );
+    const bookingId = params.get("bookingId");
 
-    if (!booking || !showBooking) {
-      return null;
-    }
+    const booking = confirmedBookings?.find((item) => item.id === bookingId);
 
     return booking;
-  }, [confirmedBookings, showBooking, idSelectedBooking]);
-
-  /**
-   * checks if the user was redirected to this page after making or updating a booking
-   */
-  useEffect(() => {
-    if (successfulBooking) {
-      setSuccessfulBooking(false);
-      setShowBooking(true);
-    }
-  }, [successfulBooking, setSuccessfulBooking]);
+  }, [confirmedBookings, params]);
 
   const handleNewBookingOnClick = () => {
     navigate(ScreenPaths.home);

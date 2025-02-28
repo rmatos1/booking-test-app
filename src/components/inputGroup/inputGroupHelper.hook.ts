@@ -1,7 +1,6 @@
-import { FocusEvent, useState } from 'react';
+import { FocusEvent, useState } from "react";
 
 export interface IUseInputGroupHelperInput {
-  validation?: (value: string) => boolean;
   validationErrorMsg?: string;
 }
 
@@ -12,24 +11,23 @@ interface IUseInputGroupHelperOutput {
 }
 
 export const useInputGroupHelper = ({
-  validation,
   validationErrorMsg,
 }: IUseInputGroupHelperInput): IUseInputGroupHelperOutput => {
-  const [error, setError] = useState<string>('');
+  const [error, setError] = useState<string>("");
 
   const handleInputOnFocus = () => {
-    setError('');
+    setError("");
   };
 
   const handleInputOnBlur = (e: FocusEvent<HTMLInputElement>) => {
     const { value } = e.target;
 
-    let errorText = '';
+    let errorText = "";
 
     if (!value) {
-      errorText = 'Required field';
-    } else if (validation && !validation(value)) {
-      errorText = validationErrorMsg || '';
+      errorText = "Required field";
+    } else if (validationErrorMsg) {
+      errorText = validationErrorMsg;
     }
 
     setError(errorText);

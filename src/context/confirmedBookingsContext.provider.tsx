@@ -4,8 +4,9 @@ import {
   SetStateAction,
   createContext,
   useState,
-} from 'react';
-import { IConfirmedBooking } from '../types';
+  useEffect,
+} from "react";
+import { IConfirmedBooking } from "../types";
 
 export interface IConfirmedBookingsContext {
   confirmedBookings: IConfirmedBooking[];
@@ -24,18 +25,29 @@ export const ConfirmedBookingsContext =
   });
 
 export const ConfirmedBookingsProvider = ({
-  children, customValue
+  children,
+  customValue,
 }: IConfirmedBookingsProvider) => {
   const [confirmedBookings, setConfirmedBookings] = useState<
     IConfirmedBooking[]
-  >([]);
+  >(() => {
+    const savedBookings = sessionStorage.getItem("confirmedBookings");
+    return savedBookings ? JSON.parse(savedBookings) : [];
+  });
+
+  useEffect(() => {
+    sessionStorage.setItem(
+      "confirmedBookings",
+      JSON.stringify(confirmedBookings)
+    );
+  }, [confirmedBookings]);
 
   return (
     <ConfirmedBookingsContext.Provider
       value={{
         confirmedBookings,
         setConfirmedBookings,
-        ...customValue 
+        ...customValue,
       }}
     >
       {children}

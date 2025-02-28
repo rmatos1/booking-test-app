@@ -1,4 +1,4 @@
-import { svg } from '../../assets';
+import { svg } from "../../assets";
 import {
   BookingForm,
   Button,
@@ -8,30 +8,44 @@ import {
   ListItem,
   NavBar,
   TwoColumnsGrid,
-} from '../../components';
-import { ConfirmYourBookingDrawer } from '../../drawers';
+} from "../../components";
+import { ConfirmYourBookingDrawer } from "../../drawers";
 import {
   BedroomName,
   ContainerPic,
   Description,
   PriceGroup,
   PriceText,
-} from './resultsList.styles';
-import { useResultsListHelper } from './resultsListHelper.hook';
+  NumberNightsContainer,
+} from "./resultsList.styles";
+import { useResultsListHelper } from "./resultsListHelper.hook";
 
 /**
  * page that shows the available bedrooms according to the search criteria
  */
 export const ResultsList = () => {
-  const { onBookingClick, isDrawerVisible, results } = useResultsListHelper();
+  const {
+    onBookingClick,
+    isDrawerVisible,
+    results,
+    onFormSubmit,
+    onCloseDrawer,
+    selectedBedroom,
+  } = useResultsListHelper();
 
   /**
    * adds a "s" if there is more than one bed in the bedroom
    */
-  const bedsListItem = (beds: number, typeOfBed: string) => {
+  const BedsListItem = ({
+    beds,
+    typeOfBed,
+  }: {
+    beds: number;
+    typeOfBed: string;
+  }) => {
     return (
       <li>
-        {beds} {typeOfBed} bed{beds > 1 ? 's' : ''}
+        {beds} {typeOfBed} bed{beds > 1 ? "s" : ""}
       </li>
     );
   };
@@ -41,9 +55,20 @@ export const ResultsList = () => {
       <NavBar />
 
       <TwoColumnsGrid>
-        <BookingForm />
+        <BookingForm onFormSubmit={onFormSubmit} />
 
         <ListContainer>
+          <NumberNightsContainer>
+            <span>
+              Availability from {results.checkIn} to {results.checkOut}
+            </span>
+
+            <span>
+              {results.numberOfNights} night
+              {results.numberOfNights > 1 ? "s" : ""}
+            </span>
+          </NumberNightsContainer>
+
           {results.bedrooms.length ? (
             <>
               {results.bedrooms.map((item) => (
@@ -64,18 +89,27 @@ export const ResultsList = () => {
 
                     <ul data-testid="bedroom-details">
                       <li>{item.type} bedroom</li>
-                      {item.beds.double &&
-                        bedsListItem(item.beds.double, 'double')}
-                      {item.beds.single &&
-                        bedsListItem(item.beds.single, 'single')}
+                      {item.beds.double && (
+                        <BedsListItem
+                          beds={item.beds.double}
+                          typeOfBed="double"
+                        />
+                      )}
+
+                      {item.beds.single && (
+                        <BedsListItem
+                          beds={item.beds.single}
+                          typeOfBed="single"
+                        />
+                      )}
                     </ul>
                   </Description>
 
                   <PriceGroup>
-                    <span>{results.numberOfNights} nights</span>
+                    <span>$ {item.dailyPrice} / night</span>
 
                     <PriceText data-testid="bedroom-total-price">
-                      $ {item.dailyPrice * results.numberOfNights}
+                      $ {item.totalPrice}
                     </PriceText>
 
                     <Button
@@ -95,13 +129,19 @@ export const ResultsList = () => {
             <ImgContainer data-testid="no-results-content">
               <Image imgSrc={svg.emptyResults} alt="no results image" />
 
-              <p>We didn't find available bedrooms with this search criteria</p>
+              <p>
+                We didn't find any available bedrooms with this search criteria
+              </p>
             </ImgContainer>
           )}
         </ListContainer>
       </TwoColumnsGrid>
 
-      {isDrawerVisible && <ConfirmYourBookingDrawer />}
+      <ConfirmYourBookingDrawer
+        isDrawerVisible={isDrawerVisible}
+        onCloseDrawer={onCloseDrawer}
+        selectedBedroom={selectedBedroom}
+      />
     </>
   );
 };

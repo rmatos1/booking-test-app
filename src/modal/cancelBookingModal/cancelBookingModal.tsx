@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from "moment";
 import {
   Button,
   CloseButton,
@@ -7,13 +7,13 @@ import {
   Overlay,
   RowButtons,
   TopModal,
-} from '../../components';
-import { WarningIcon } from '../../icons';
-import { IConfirmedBooking } from '../../types';
+} from "../../components";
+import { WarningIcon } from "../../icons";
+import { IConfirmedBooking } from "../../types";
 
 export interface ICancelBookingModal {
   onClose: () => void;
-  bookingData: IConfirmedBooking;
+  bookingData: IConfirmedBooking | null;
   onCancelBooking: () => void;
 }
 
@@ -24,7 +24,7 @@ export const CancelBookingModal = ({
 }: ICancelBookingModal) => {
   return (
     <ModalWrapper data-testid="cancel-booking-modal">
-      <Overlay onClick={onClose} data-testid="overlay" />
+      <Overlay $isVisible onClick={onClose} data-testid="overlay" />
 
       <Modal>
         <TopModal>
@@ -36,9 +36,9 @@ export const CancelBookingModal = ({
         <WarningIcon />
 
         <h4 data-testid="cancel-modal-title">
-          Do you want to cancel this booking from{' '}
-          {moment(bookingData.checkIn).format('MM/DD/YYYY')} to{' '}
-          {moment(bookingData.checkOut).format('MM/DD/YYYY')}?
+          Do you want to cancel this booking from{" "}
+          {moment(bookingData?.checkIn).format("MM/DD/YYYY")} to{" "}
+          {moment(bookingData?.checkOut).format("MM/DD/YYYY")}?
         </h4>
 
         <RowButtons $width={250}>

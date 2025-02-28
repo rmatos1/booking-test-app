@@ -1,63 +1,78 @@
-import { ChangeEvent, FormEvent, useContext, useEffect, useState } from 'react';
-import { initialBookingData } from '../../constants';
-import { ConfirmedBookingsContext, DrawerContext } from '../../context';
-import { hideScroll, validateEmail } from '../../helpers';
-import { IConfirmedBooking } from '../../types';
+import { FormEvent, useContext, useEffect, useState } from "react";
+import { FieldErrors, useForm, UseFormRegister } from "react-hook-form";
+import { ConfirmedBookingsContext } from "../../context";
+import { hideScroll, validateEmail } from "../../helpers";
+import { IConfirmedBooking } from "../../types";
 
 interface IUseMyBookingsHelper {
-  email: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  register: UseFormRegister<{ email: string }>;
+  errors: FieldErrors<{ email: string }>;
+  lastCheckedEmail: string;
   isButtonDisabled: boolean;
-  results: IConfirmedBooking[];
+  results: IConfirmedBooking[] | null;
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
   onOpenDrawer: (item: IConfirmedBooking) => void;
   showModal: boolean;
   onCloseModal: () => void;
-  selectedBooking: IConfirmedBooking;
+  selectedBooking: IConfirmedBooking | null;
   onOpenModal: (item: IConfirmedBooking) => void;
   onCancelBooking: () => void;
   isDrawerVisible: boolean;
+  onCloseDrawer: () => void;
 }
-
-const initialSelectedBookingData = {
-  ...initialBookingData,
-  id: '',
-  totalPrice: 0,
-};
 
 export const useMyBookingsHelper = (): IUseMyBookingsHelper => {
   const { confirmedBookings, setConfirmedBookings } = useContext(
     ConfirmedBookingsContext
   );
-  const { isDrawerVisible, setIsDrawerVisible } = useContext(DrawerContext);
 
-  const [email, setEmail] = useState<string>('');
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setError,
+    clearErrors,
+    formState: { errors },
+  } = useForm<{ email: string }>({
+    defaultValues: {
+      email: "",
+    },
+  });
+
+  const [lastCheckedEmail, setLastCheckedEmail] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
-  const [results, setResults] = useState<IConfirmedBooking[]>([]);
+  const [results, setResults] = useState<IConfirmedBooking[] | null>(null);
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [selectedBooking, setSelectedBooking] = useState<IConfirmedBooking>(
-    initialSelectedBookingData
-  );
+  const [selectedBooking, setSelectedBooking] =
+    useState<IConfirmedBooking | null>(null);
+  const [isDrawerVisible, setIsDrawerVisible] = useState(false);
+
+  const watchEmail = watch("email");
 
   useEffect(() => {
-    const isValid = validateEmail(email);
+    const isValidEmail = validateEmail(watchEmail);
 
-    setIsButtonDisabled(!isValid);
-  }, [email]);
+    if (!isValidEmail) {
+      setError("email", {
+        message: "Invalid email",
+      });
+    } else {
+      clearErrors("email");
+    }
+
+    setIsButtonDisabled(!isValidEmail);
+  }, [watchEmail, clearErrors, setError]);
 
   useEffect(() => {
     hideScroll(showModal);
   }, [showModal]);
 
-  const handleEmailOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
+  const handleFormOnSubmit = (data: { email: string }) => {
+    const bookings = confirmedBookings?.filter(
+      (item) => item.email === data.email
+    );
 
-  const handleFormOnSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const bookings = confirmedBookings.filter((item) => item.email === email);
-
+    setLastCheckedEmail(data.email);
     setResults(bookings);
   };
 
@@ -79,28 +94,33 @@ export const useMyBookingsHelper = (): IUseMyBookingsHelper => {
 
   const handleCancelBookingOnClick = () => {
     const bookings = confirmedBookings.filter(
-      (item) => item.id !== selectedBooking.id
+      (item) => item.id !== selectedBooking?.id
     );
 
     setConfirmedBookings(bookings);
 
-    const updatedResults = results.filter(
-      (item) => item.id !== selectedBooking.id
+    const updatedResults = (results || []).filter(
+      (item) => item.id !== selectedBooking?.id
     );
 
     setResults(updatedResults);
 
     setShowModal(false);
 
-    setSelectedBooking(initialSelectedBookingData);
+    setSelectedBooking(null);
+  };
+
+  const handleDrawerOnClose = () => {
+    setIsDrawerVisible(false);
   };
 
   return {
-    email,
-    onChange: handleEmailOnChange,
+    lastCheckedEmail,
+    register,
+    errors,
     isButtonDisabled,
     results,
-    onSubmit: handleFormOnSubmit,
+    onSubmit: handleSubmit(handleFormOnSubmit),
     onOpenDrawer: handleOpenDrawerOnClick,
     showModal,
     onCloseModal: handleCloseModalOnClick,
@@ -108,5 +128,6 @@ export const useMyBookingsHelper = (): IUseMyBookingsHelper => {
     onOpenModal: handleOpenModalOnClick,
     onCancelBooking: handleCancelBookingOnClick,
     isDrawerVisible,
+    onCloseDrawer: handleDrawerOnClose,
   };
 };

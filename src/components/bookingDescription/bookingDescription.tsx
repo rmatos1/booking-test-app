@@ -1,12 +1,11 @@
-import moment from 'moment';
-import { getDifferenceDates } from '../../helpers';
-import { IConfirmedBooking } from '../../types';
+import { getDifferenceDates, formatDateToLocale } from "../../helpers";
+import { IConfirmedBooking } from "../../types";
 import {
   Table,
   TableTitle,
   TdData,
   TdDescription,
-} from './bookingDescription.styles';
+} from "./bookingDescription.styles";
 
 export interface IBookingDescription {
   title?: string;
@@ -49,15 +48,13 @@ export const BookingDescription = ({
         <tr>
           <TdDescription $isLeftAligned={isLeftAligned}>Period:</TdDescription>
           <TdData data-testid="period">
-            {moment(data.checkIn).format('MM/DD/YYYY')} -{' '}
-            {moment(data.checkOut).format('MM/DD/YYYY')}
+            {formatDateToLocale(data.checkIn)} -
+            {formatDateToLocale(data.checkOut)}
           </TdData>
         </tr>
 
         <tr>
-          <TdDescription $isLeftAligned={isLeftAligned}>
-            Qty of Nights:
-          </TdDescription>
+          <TdDescription $isLeftAligned={isLeftAligned}>Nights:</TdDescription>
           <TdData>{getDifferenceDates(data.checkIn, data.checkOut)}</TdData>
         </tr>
 
@@ -69,10 +66,8 @@ export const BookingDescription = ({
         </tr>
 
         <tr>
-          <TdDescription $isLeftAligned={isLeftAligned}>
-            Qty of Guests:
-          </TdDescription>
-          <TdData data-testid="qty-guests">{data.qtyGuests}</TdData>
+          <TdDescription $isLeftAligned={isLeftAligned}>Guests:</TdDescription>
+          <TdData data-testid="qty-guests">{data.guests}</TdData>
         </tr>
 
         <tr>

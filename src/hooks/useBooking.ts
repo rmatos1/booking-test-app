@@ -1,12 +1,8 @@
-import moment from 'moment';
-import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import {
-  BookingContext,
-  ConfirmedBookingsContext,
-  DrawerContext,
-} from '../context';
-import { ICheckBooking, IConfirmedBooking, ScreenPaths } from '../types';
+import moment from "moment";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { ConfirmedBookingsContext } from "../context";
+import { ICheckBooking, IConfirmedBooking, ScreenPaths } from "../types";
 
 interface IConfirmBooking {
   bookings: IConfirmedBooking[];
@@ -34,9 +30,6 @@ export const useBooking = (): IUseBooking => {
   const { confirmedBookings, setConfirmedBookings } = useContext(
     ConfirmedBookingsContext
   );
-  const { setIdSelectedBooking, setIsUpdatingBooking, setSuccessfulBooking } =
-    useContext(BookingContext);
-  const { setIsDrawerVisible } = useContext(DrawerContext);
 
   const checkBookingsOverlap = ({
     selectedBedroom,
@@ -53,13 +46,20 @@ export const useBooking = (): IUseBooking => {
     /*
      * checks if there are dates that overlap with any of the previously filtered bookings
      */
-    return bookingsOnBedroom?.filter(
-      (item) =>
+    return bookingsOnBedroom?.filter((item) => {
+      if (
         (moment(checkIn) >= moment(item.checkIn) &&
           moment(checkIn) < moment(item.checkOut)) ||
         (moment(checkOut) > moment(item.checkIn) &&
-          moment(checkOut) <= moment(item.checkOut))
-    );
+          moment(checkOut) <= moment(item.checkOut)) ||
+        (moment(item.checkIn) > moment(checkIn) &&
+          moment(item.checkIn) < moment(checkOut)) ||
+        (moment(item.checkOut) > moment(checkIn) &&
+          moment(item.checkOut) < moment(checkOut))
+      ) {
+        return item;
+      }
+    });
   };
 
   const confirmBooking = ({
@@ -69,15 +69,9 @@ export const useBooking = (): IUseBooking => {
   }: IConfirmBooking) => {
     setConfirmedBookings(bookings);
 
-    setIdSelectedBooking(id);
+    const updatingUrl = isUpdatingBooking ? "&isUpdatingBooking=true" : "";
 
-    setSuccessfulBooking(true);
-
-    isUpdatingBooking && setIsUpdatingBooking(true);
-
-    navigate(`/${ScreenPaths.confirmedBooking}`);
-
-    setIsDrawerVisible(false);
+    navigate(`/${ScreenPaths.confirmedBooking}?bookingId=${id}${updatingUrl}`);
   };
 
   return {

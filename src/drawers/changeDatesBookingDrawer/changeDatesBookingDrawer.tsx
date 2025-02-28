@@ -1,69 +1,39 @@
-import {
-  Button,
-  ErrorText,
-  Form,
-  InputGroup,
-  TitleForm,
-} from '../../components';
-import { IConfirmedBooking } from '../../types';
-import { BaseDrawer } from '../baseDrawer';
+import { BookingForm, ErrorText, TitleForm } from "../../components";
+import { IConfirmedBooking, IBaseDrawer } from "../../types";
+import { BaseDrawer } from "../baseDrawer";
 
-import { useChangeDatesBookingDrawerHelper } from './changeDatesBookingDrawerHelper.hook';
+import { useChangeDatesBookingDrawerHelper } from "./changeDatesBookingDrawerHelper.hook";
+
+interface IChangeDatesBookingDrawer extends IBaseDrawer {
+  bookingData: IConfirmedBooking | null;
+}
 
 /**
  * the form to choose new dates and update the booking
+ * @param props.isDrawerVisible
+ * @param props.onCloseDrawer
  * @param props.bookingData - all data related to the current booking
  */
 export const ChangeDatesBookingDrawer = ({
+  isDrawerVisible,
+  onCloseDrawer,
   bookingData,
-}: {
-  bookingData: IConfirmedBooking;
-}) => {
-  const {
-    formData,
-    onChange,
-    onSubmit,
-    isButtonDisabled,
-    limitDates,
-    errorMsg,
-  } = useChangeDatesBookingDrawerHelper(bookingData);
+}: IChangeDatesBookingDrawer) => {
+  const { onSubmit, errorMsg } = useChangeDatesBookingDrawerHelper(bookingData);
 
   return (
-    <BaseDrawer>
-      <Form onSubmit={onSubmit} data-testid="change-dates-form">
-        <TitleForm>Choose the new dates</TitleForm>
+    <BaseDrawer isDrawerVisible={isDrawerVisible} onCloseDrawer={onCloseDrawer}>
+      <TitleForm style={{ textAlign: "center" }}>
+        Choose the new dates
+      </TitleForm>
 
-        <InputGroup
-          dataTestId="input-check-in"
-          label="Check in"
-          type="date"
-          name="checkIn"
-          value={formData.checkIn}
-          onChange={onChange}
-          min={limitDates.checkIn.min}
-          max={limitDates.checkIn.max}
-        />
+      <BookingForm onFormSubmit={onSubmit} displayGuestInput={false} />
 
-        <InputGroup
-          dataTestId="input-check-out"
-          label="Check out"
-          type="date"
-          name="checkOut"
-          value={formData.checkOut}
-          onChange={onChange}
-          min={limitDates.checkOut.min}
-        />
-
-        <Button $isDisabled={isButtonDisabled} data-testid="update-booking">
-          Update Booking
-        </Button>
-
-        {errorMsg && (
-          <ErrorText $isCentered data-testid="error-msg">
-            {errorMsg}
-          </ErrorText>
-        )}
-      </Form>
+      {errorMsg && (
+        <ErrorText $isCentered data-testid="error-msg">
+          {errorMsg}
+        </ErrorText>
+      )}
     </BaseDrawer>
   );
 };

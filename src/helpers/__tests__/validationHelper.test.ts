@@ -19,7 +19,7 @@ describe('validationHelper.ts > validateEmail', () => {
 
     expect(isValid1).toBe(false);
 
-    const isValid2 = validateName('test@test.com');
+    const isValid2 = validateEmail('test@test.com');
 
     expect(isValid2).toBe(true);
   });

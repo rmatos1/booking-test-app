@@ -1,76 +1,34 @@
-import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react';
-import { calculateBookingTotalPrice, getLimitDates } from '../../helpers';
-import { useBooking } from '../../hooks';
-import {
-  IBookingData,
-  IConfirmedBooking,
-  ILimitDates,
-  IUseBookingFormHelper,
-} from '../../types';
+import { useState } from "react";
+import { calculateBookingTotalPrice } from "../../helpers";
+import { useBooking } from "../../hooks";
+import { IBookingData, IConfirmedBooking } from "../../types";
+import { SubmitHandler, UseFormHandleSubmit } from "react-hook-form";
 
-type TFormData = Pick<IBookingData, 'checkIn' | 'checkOut'>;
+type TFormData = Pick<IBookingData, "checkIn" | "checkOut">;
 
-interface IUseChangeDatesBookingDrawerHelper extends IUseBookingFormHelper {
-  formData: TFormData;
-  limitDates: {
-    checkIn: ILimitDates;
-    checkOut: ILimitDates;
-  };
+interface IUseChangeDatesBookingDrawerHelper {
+  onSubmit: UseFormHandleSubmit<TFormData, undefined>;
   errorMsg: string;
 }
 
 export const useChangeDatesBookingDrawerHelper = (
-  bookingData: IConfirmedBooking
+  bookingData: IConfirmedBooking | null
 ): IUseChangeDatesBookingDrawerHelper => {
   const { confirmedBookings, checkBookingsOverlap, confirmBooking } =
-    useBooking();  
+    useBooking();
 
-  const [formData, setFormData] = useState<TFormData>({
-    checkIn: bookingData.checkIn,
-    checkOut: bookingData.checkOut,
-  });
-  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
-  const [errorMsg, setErrorMsg] = useState<string>('');
+  const [errorMsg, setErrorMsg] = useState<string>("");
 
-  const limitDates = useMemo(
-    () => getLimitDates(formData.checkIn, formData.checkOut),
-    [formData]
-  );
-
-  useEffect(() => {
-    const isValid = formData.checkIn && formData.checkOut;
-
-    setIsButtonDisabled(!isValid);
-
-    /*
-     * hides the error message if a new date is selected
-     */
-    if (errorMsg) {
-      setErrorMsg('');
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [formData]);
-
-  const handleInputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleUpdateBookingOnSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const { checkIn, checkOut } = formData;
-    const { selectedBedroom, id } = bookingData;
+  const handleUpdateBookingOnSubmit: SubmitHandler<TFormData> = (
+    data: TFormData
+  ) => {
+    const { checkIn, checkOut } = data;
 
     /*
      * checks if there is a date overlap
      */
     const hasDateOverlap = checkBookingsOverlap({
-      selectedBedroom,
+      selectedBedroom: bookingData?.selectedBedroom || 0,
       checkIn,
       checkOut,
     });
@@ -80,24 +38,24 @@ export const useChangeDatesBookingDrawerHelper = (
      */
     if (
       !hasDateOverlap.length ||
-      (hasDateOverlap.length === 1 && hasDateOverlap[0].id === id)
+      (hasDateOverlap.length === 1 && hasDateOverlap[0].id === bookingData?.id)
     ) {
-      if(bookingData.checkIn === checkIn && bookingData.checkOut === checkOut) {
-
+      if (
+        bookingData?.checkIn === checkIn &&
+        bookingData?.checkOut === checkOut
+      ) {
         setErrorMsg(
-          'You didn´t change the check-in and check-out dates. Please select at least one new date'
+          "You didn´t change the check-in and check-out dates. Please select at least one new date"
         );
-
       } else {
-
         const totalPrice = calculateBookingTotalPrice({
-          selectedBedroom,
+          selectedBedroom: bookingData?.selectedBedroom || 0,
           checkIn,
           checkOut,
         });
 
         const bookings = confirmedBookings.map((item) => {
-          if (item.id === id) {
+          if (item.id === bookingData?.id) {
             return {
               ...item,
               checkIn,
@@ -105,30 +63,25 @@ export const useChangeDatesBookingDrawerHelper = (
               totalPrice,
             };
           }
-  
+
           return item;
         });
 
         confirmBooking({
           bookings,
-          id,
+          id: bookingData?.id || "",
           isUpdatingBooking: true,
         });
       }
-      
     } else {
       setErrorMsg(
-        'The bedroom has already been booked for the chosen period. Please choose new dates'
+        "The bedroom has already been booked for the chosen period. Please choose new dates"
       );
     }
   };
 
   return {
-    formData,
-    onChange: handleInputOnChange,
     onSubmit: handleUpdateBookingOnSubmit,
-    isButtonDisabled,
-    limitDates,
     errorMsg,
   };
 };

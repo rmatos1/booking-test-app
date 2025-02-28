@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { MOBILE } from '../../constants';
+import styled from "styled-components";
+import { MOBILE } from "../../constants";
 
 export const Drawer = styled.div<{ $showDrawer: boolean }>`
   width: min(100%, 450px);
@@ -12,7 +12,7 @@ export const Drawer = styled.div<{ $showDrawer: boolean }>`
   right: 0;
   transition: transform 0.25s;
   transform: ${(props) =>
-    props.$showDrawer ? 'translateX(0)' : 'translateX(450px)'};
+    props.$showDrawer ? "translateX(0)" : "translateX(450px)"};
   box-sizing: border-box;
   padding: 20px 15px;
 
@@ -20,6 +20,6 @@ export const Drawer = styled.div<{ $showDrawer: boolean }>`
     width: 100%;
     border-radius: 0;
     transform: ${(props) =>
-      props.$showDrawer ? 'translateX(0)' : 'translateX(100%)'};
+      props.$showDrawer ? "translateX(0)" : "translateX(100%)"};
   }
 `;
